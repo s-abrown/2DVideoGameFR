@@ -138,7 +138,7 @@ POUR COMMENCER`, {
 scene("nameInputFR", () => {
     add([
         pos(150, 200),
-        text("Tapez votre prenom puis appuyez sur enter", {
+        text("Tapez votre prénom puis appuyez sur enter", {
             font: "monospace",
             width: width() - pad * 2,
             size: 32,
@@ -219,44 +219,44 @@ scene("introductionFR", () =>{
 
     const dialogs = [
         // Teacher introducing AI:
-        [ "playerTeacherAvatar", "Bonjour a tous."],
-        [ "playerTeacherAvatar", "Aujourd'hui, nous allons nous familiariser avec l'intelligence artificielle, ou 'IA' en abrege." ],
-        [ "playerTeacherAvatar", "L'IA permet aux ordinateurs d'apprendre et de se developper, un peu comme le developpement du cerveau." ],
-        [ "playerTeacherAvatar", "Tout comme vous et moi, une IA peut comprendre le langage, planifier des choses, resoudre des problemes, penser et faire preuve d'intelligence." ],
-        [ "playerTeacherAvatar", "C'est un excellent moyen de faire en sorte que les ordinateurs executent des taches a notre place et nous aident dans notre vie quotidienne !" ],
-        [ "playerTeacherAvatar", "Si vous jouez a des jeux video, il est fort probable que vous ayez deja rencontre une IA. Elle contribue aux experiences de jeu en les rendant plus naturelles." ],
-        [ "playerTeacherAvatar", "En bref, les IA peuvent etre utiles dans toutes sortes de scenarios pour automatiser les choses et aider a realiser des taches complexes." ],
+        [ "playerTeacherAvatar", "Bonjour à tous."],
+        [ "playerTeacherAvatar", "Aujourd'hui, nous allons nous familiariser avec l'intelligence artificielle, ou 'IA' en abrégé." ],
+        [ "playerTeacherAvatar", "L'IA permet aux ordinateurs d'apprendre et de se développer, un peu comme le développement du cerveau." ],
+        [ "playerTeacherAvatar", "Tout comme vous et moi, une IA peut comprendre le langage, planifier des choses, résoudre des problemès, penser et faire preuve d'intelligence." ],
+        [ "playerTeacherAvatar", "C'est un excellent moyen de faire en sorte que les ordinateurs exécutent des tâches à notre place et nous aident dans notre vie quotidienne !" ],
+        [ "playerTeacherAvatar", "Si vous jouez à des jeux video, il est fort probable que vous ayez déjà rencontre une IA. Elle contribue aux experiences de jeu en les rendant plus naturelles." ],
+        [ "playerTeacherAvatar", "En bref, les IA peuvent être utiles dans toutes sortes de scenarios pour automatiser les choses et aider à realiser des tâches complexes." ],
         // Teacher introduces K.A.T.E.:
-        [ "playerTeacherAvatar", "Je vais vous presenter une IA aujourd'hui." ],
-        [ "playerTeacherAvatar", "Voici K.A.T.E. Son nom est l'abreviation de 'Kind Artifical Teaching Enrichment Tool'. " ], 
-        [ "playerTeacherAvatar", "Son travail consiste a aider les ecoles a trouver les meilleurs enseignants a embaucher et a suggerer qui, selon elle, sera le candidat le plus approprie." ],
-        [ "playerTeacherAvatar", "Naturellement, notre directeur s'y est interesse. Je suis sûr que vous avez tous entendu dire que l'ecole est a la recherche d'un nouveau professeur de sciences." ],
-        [ "playerTeacherAvatar", "Quel meilleur moment pour faire appel a K.A.T.E. pour nous aider a vous trouver un formidable nouveau professeur?" ],
-        [ "playerTeacherAvatar", "Cependant, nous ne voulons pas lui laisser le dernier mot sur le choix de la personne qui sera engagee pour vous enseigner." ],
-        [ "playerTeacherAvatar", "Apres tout, tout comme vous ou moi, elle peut faire des erreurs !" ],
-        [ "playerTeacherAvatar", "C'est la que vous, les enfants, intervenez !" ],
+        [ "playerTeacherAvatar", "Je vais vous présenter une IA aujourd'hui." ],
+        [ "playerTeacherAvatar", "Voici K.A.T.E. Son nom est l'abréviation de 'Kind Artifical Teaching Enrichment Tool'. " ], 
+        [ "playerTeacherAvatar", "Son travail consiste à aider les écoles à trouver les meilleurs enseignants à embaucher et à suggerer qui, selon elle, sera le candidat le plus approprié." ],
+        [ "playerTeacherAvatar", "Naturellement, notre directeur s'y est intéressé. Je suis sûr que vous avez tous entendu dire que notre école est à la recherche d'un nouveau professeur de sciences." ],
+        [ "playerTeacherAvatar", "Quel meilleur moment pour faire appel à K.A.T.E. pour nous aider à vous trouver un formidable nouveau professeur ?" ],
+        [ "playerTeacherAvatar", "Cependant, nous ne voulons pas lui laisser le dernier mot sur le choix de la personne qui sera engagée pour vous enseigner." ],
+        [ "playerTeacherAvatar", "Après tout, tout comme vous ou moi, elle peut faire des erreurs !" ],
+        [ "playerTeacherAvatar", "C'est là que vous, les enfants, intervenez !" ],
         [ "playerTeacherAvatar", "Aujourd'hui, l'un d'entre vous sera choisi pour passer un peu de temps avec K.A.T.E. pour que vous puissiez voir et comprendre comment elle travaille." ],
-        [ "playerTeacherAvatar", "Les IA ont besoin de collecter des informations pour apprendre avant de pouvoir faire des suggestions eclairees." ],
-        [ "playerTeacherAvatar", "Pour cette raison, la personne choisie accompagnera K.A.T.E. dans son voyage de collecte de donnees !" ],
-        [ "playerTeacherAvatar", "Puisque notre directeur souhaite que notre nouvelle recrue s'integre rapidement dans notre ecole, K.A.T.E. va recueillir ses informations aupres d'anciens candidats." ],
+        [ "playerTeacherAvatar", "Les IA ont besoin de collecter des informations pour apprendre avant de pouvoir faire des suggestions éclairées." ],
+        [ "playerTeacherAvatar", "Pour cette raison, la personne choisie accompagnera K.A.T.E. dans son voyage de collecte de données !" ],
+        [ "playerTeacherAvatar", "Puisque notre directeur souhaite que notre nouvelle recrue s'intègre rapidement dans notre école, K.A.T.E. puisera ses informations aupràs d'anciens candidats." ],
         [ "playerTeacherAvatar", "En d'autres termes, elle fera la connaissance d'autres enseignants et decouvrira leur experience d'embauche." ],
-        [ "playerTeacherAvatar", "Leur parcours, leur experience professionnelle, leurs opinions personnelles et leurs points de vue..." ],
-        [ "playerTeacherAvatar", "Elle consultera meme leur CV !" ],
-        [ "playerTeacherAvatar", "Une fois que K.A.T.E. aura rassemble toutes les informations necessaire, elle sera en mesure de nous dire qui, selon elle, est le meilleur candidat pour le poste de professeur de sciences." ],
-        [ "playerTeacherAvatar", "L'eleve qui accompagnera K.A.T.E. devra apprendre a ses côtes et aura la possibilite de donner son avis sur le meilleur candidat." ],
-        [ "playerTeacherAvatar", "De cette façon, nous pourrons comparer l'evaluation de K.A.T.E. a celle d'un eleve !" ],
-        [ "playerTeacherAvatar", "Je me demande si elles seront differentes." ],
-        [ "playerTeacherAvatar", "J'ai ici un bol avec tous vos noms ecrits sur des bouts de papier differents." ],
+        [ "playerTeacherAvatar", "Leur parcours, leur expérience professionnelle, leurs opinions personnelles et leurs points de vue..." ],
+        [ "playerTeacherAvatar", "Elle consultera même leur CV !" ],
+        [ "playerTeacherAvatar", "Une fois que K.A.T.E. aura rassemblé toutes les informations nécessaire, elle sera en mesure de nous dire qui, selon elle, est le meilleur candidat pour le poste de professeur de sciences." ],
+        [ "playerTeacherAvatar", "L'élève qui accompagnera K.A.T.E. devra apprendre à ses côtes et aura la possibilité de donner son avis sur le meilleur candidat." ],
+        [ "playerTeacherAvatar", "De cette façon, nous pourrons comparer l'évaluation de K.A.T.E. à celle d'un élève !" ],
+        [ "playerTeacherAvatar", "Je me demande si elles seront différentes." ],
+        [ "playerTeacherAvatar", "J'ai ici un bol avec tous vos noms écrits sur des bouts de papier differents." ],
         [ "playerTeacherAvatar", "J'en choisirai un au hasard et l'heureux gagnant sera choisi pour etre le compagnon de K.A.T.E. !" ],
-        [ "playerTeacherAvatar", "Tres bien! Un... " ],
+        [ "playerTeacherAvatar", "Très bien! Un... " ],
         [ "playerTeacherAvatar", "Deux..." ],
         [ "playerTeacherAvatar", "Trois..." ],
         [ "playerTeacherAvatar", "..." ],
         [ "playerTeacherAvatar", `${namePlayer}!` ],
         [ "playerTeacherAvatar", "Tu accompagneras K.A.T.E. !" ],
-        [ "playerTeacherAvatar", "Emmene-la faire un tour pour parler a des enseignants et recueillir des informations sur eux. Qu'est-ce qui les a aides a etre des candidats performants ici ?" ],
+        [ "playerTeacherAvatar", "Emmène-la faire un tour pour parler à des enseignants et recueillir des informations sur eux. Qu'est-ce qui les à aides à être des candidats performants ici ?" ],
         [ "playerTeacherAvatar", "Prends ton temps!" ],
-        [ "playerTeacherAvatar", "Une fois que toi et K.A.T.E. aurez rassemble toutes les informations necessaires pour prendre une decision eclairee, reviens ici et nous verrons ce qu'elle suggere..." ],
+        [ "playerTeacherAvatar", "Une fois que toi et K.A.T.E. aurez rassemblé toutes les informations nécessaires pour prendre une décision éclairée, reviens ici et nous verrons ce qu'elle suggère..." ],
         [ "playerTeacherAvatar", "et si tu es d'accord avec elle!" ],
     ];
 
@@ -304,7 +304,7 @@ scene("corridorFR", () =>{
             opacity(0),
             color(255, 0, 0),
             area(),
-            body({ isStatic: true })
+            body({ isStatic: true }),
         ]);
         let corridorWallUp = add([
             pos(8, 237),
@@ -312,7 +312,7 @@ scene("corridorFR", () =>{
             opacity(0),
             color(255, 0, 0),
             area(),
-            body({ isStatic: true })
+            body({isStatic: true})
         ]);
         let corridorWallLeft = add([
             pos(11, 238),
@@ -484,7 +484,7 @@ scene("corridorFR", () =>{
         pos(playerPos),
         area(),
         scale(0.10),
-        body({ isStatic: true }),
+        body(),
         ]);
 
     overWorldPlayer.onUpdate(() => {
@@ -540,7 +540,7 @@ scene("corridorFR", () =>{
         ]);
         txt.hidden = true
     // A function that deletes the text boxes once the dialogue is finished
-    function deleEverything (){
+    function delegetthing (){
         textbox.hidden = true;
         avatar.hidden = true; 
         portrait.hidden = true;
@@ -557,8 +557,7 @@ scene("corridorFR", () =>{
         txt.hidden = false;  
         txt.text = t[v - 1];
         playerSpeed = 0} else {
-            deleEverything();
-            v = 0
+            delegetthing();
         };
     };
     // Two functions to update the dialogues (for doors from which to access the teachers)
@@ -571,7 +570,9 @@ scene("corridorFR", () =>{
         go(string)
     });
     onKeyPress("n", () => {
-        deleEverything();
+        delegetthing();
+        //alert("ending interaction")
+        //onCollideEnd("overWorldPlayer", "englishDoor");
     });
     };
     function updateDoorsDialog(v, t, string) {
@@ -589,261 +590,191 @@ scene("corridorFR", () =>{
     };
 
     // A) Interaction with LOCKERS when player presses space while touching them
-    let lockerD = ["Oh, est-ce qu'on cherche des professeurs caches dans des casiers ? Quels farceurs!", "C'est une tradition a l'ecole que les professeurs s'enferment la-dedans ?", "Peut-etre que c'est leur coin tranquille ?", "En tout cas, on dirait qu'il n'y a personne la-dedans.", "On continue ?"];
+    let lockerD = ["Oh, est-ce qu'on cherche des professeurs cachés dans des casiers ? Quels farceurs!", "C'est une tradition ici que les professeurs s'enferment la-dedans ?", "Peut-être que c'est leur coin tranquille ?", "En tout cas, on dirait qu'il n'y a personne là-dedans.", "On continue ?"];
     let lockerDialog = 0;
-    onKeyPress("space", () => {
-        play("spacePress")
-        every("locker", (c) => {
-        if (overWorldPlayer.isTouching(c)) {
+    overWorldPlayer.onCollide("locker", () => {
+        onKeyPress("space", () => {
+            console.log('locker'+lockerDialog)
             lockerDialog += 1;
             wait(0.3,() => {
                 updateDialog(lockerDialog, lockerD);
             });
-        }; 
         });
-    });
+    })
 
     // B) Interaction with CORRIDOR PLANTS when player presses space while touching them
-    let plantsD = ["Quelle belle plante verte ! Et c'est une vraie en plus !", "Sais-tu que la presence de telles plantes peut attenuer les sentiments d'anxiete et de stress ?", "Cela peut aider a se sentir plus en paix... et plus calme...", "C'est un peu comme mettre une decoration dans la maison de tes Sims.", "Je suppose que si un moment de calme dans un casier n'aide pas, une plante verte peut sûrement apaiser tes professeurs.", "La nature est precieuse."];
+    let plantsD = ["Quelle belle plante verte ! Et c'est une vraie en plus !", "Sais-tu que la présemce de telles plantes peut attenuer les sentiments d'anxiété et de stress ?", "Celà peut aider à se sentir plus en paix... et plus calme...", "C'est un peu comme mettre une décoration dans la maison de tes Sims.", "Je suppose que si un moment de calme dans un casier n'aide pas, une plante verte peut sûrement apaiser tes professeurs.", "La nature est précieuse."];
     let plantDialog = 0;
-    onKeyPress("space", () => {
-        every("plant", (c) => {
-        if (overWorldPlayer.isTouching(c)) {
+    overWorldPlayer.onCollide("plant", () => {
+        onKeyPress("space", () => {
+            console.log('plant'+plantDialog)
             plantDialog += 1;
             wait(0.3,() => {
                 updateDialog(plantDialog, plantsD);
             });
-        }; 
         });
-    });
+    })
 
     // C) Interaction with BATHROOM DOOR when player presses space when touching it
     let bathroomD = ["Oh, tu as besoin d'aller aux WC ?", "Vas-y, je t'attends ici alors.", "...", "...", "...", "Ok? Allons-y !"];
     let bathroomDialog = 0;
-    onKeyPress("space", () => {
-        every("bathroomDoor", (c) => {
-        if (overWorldPlayer.isTouching(c)) {
+    overWorldPlayer.onCollide("bathroomDoor", () => {
+        onKeyPress("space", () => {
+            console.log('bathroom'+bathroomDialog)
             bathroomDialog += 1;
             wait(0.3,() => {
                 updateDialog(bathroomDialog, bathroomD);
             });
-        }; 
         });
     });
 
     // D) Interactions with DOORS 
     // Interactions with doors that lead to teachers or the headmaster vary depending on weather the player has already visited the room in question or not
+    
     // a) Maths Door
-    let mathsDoorD = ["C'est la porte de la classe de maths, n'est-ce pas ?", "M. Parker devrait etre la.", "Allons-nous lui parler de son experience en tant que candidat retenu pour enseigner dans cette ecole ?", "Il pourrait avoir de precieuses informations...", "afin que je puisse suggerer la meilleure personne pour le poste d'enseignant de sciences !"];
-    let mathsDoorD2 = ["Nous avons deja parle a ton professeur de maths, tu te souviens ?", "J'aime bien ses lunettes rouges.", "Tu es sûr de vouloir lui rendre visite a nouveau ?"];
+    let mathsDoorD = ["C'est la porte de la classe de maths, n'est-ce pas ?", "M. Parker devrait être là.", "Allons-nous lui parler de son expérience en tant que candidat retenu pour enseigner dans cette école ?", "Il pourrait avoir de précieuses informations...", "afin que je puisse suggérer la meilleure personne pour le poste d'enseignant de sciences !"];
+    let mathsDoorD2 = ["Nous avons déjà parlé à ton professeur de maths, tu te souviens ?", "J'aime bien ses lunettes rouges.", "Tu es sûr de vouloir lui rendre visite à nouveau ?"];
     let mathsDoorDialog = 0;
-    if (mathsPoint == 0){
+    overWorldPlayer.onCollide("mathsDoor", () => {
         onKeyPress("space", () => {
-            every("mathsDoor", (c) => {
-            if (mathsDoorDialog <= mathsDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
+            if (mathsPoint == 0) {
+                if (mathsDoorDialog <= mathsDoorD.length){
                     mathsDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD, "mathsClassFR");
-                        console.log(mathsDoorDialog)
-                    });
-                };
-            } else {
-                mathsDoorDialog = 0
-            }; 
-            });
-        });
-    } else if (mathsPoint > 0) {
-        onKeyPress("space", () => {
-            every("mathsDoor", (c) => {
-            if (mathsDoorDialog <= mathsDoorD2.length){
-                if (overWorldPlayer.isTouching(c)) {
+                    })}               
+            } else if (mathsPoint > 0) {
+                if (mathsDoorDialog <= mathsDoorD.length){
                     mathsDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD2, "mathsClassFR");
                     });
-                };
-            } else {mathsDoorDialog = 0} 
-            });
+                }
+            }
         });
-    };
+    })
 
     // b) Science Door
-    let scienceDoorD = ["C'est la porte de la classe de maths, n'est-ce pas ?", "M. MacKenzie devrait etre la.", "Allons-nous lui parler de son experience en tant que candidat retenu pour enseigner dans cette ecole ?", "Il pourrait avoir de precieuses informations...", "afin que je puisse suggerer la meilleure personne pour le poste d'enseignant de sciences !"];
-    let scienceDoorD2 = ["Nous avons deja visite cette classe, tu es sûr de vouloir y retourner ?"];
+    let scienceDoorD = ["C'est la porte de la classe de sciences, n'est-ce pas ?", "M. MacKenzie devrait être là.", "Allons-nous lui parler de son expérience en tant que candidat retenu pour enseigner dans cette école ?", "Il pourrait avoir de précieuses informations...", "afin que je puisse suggérer la meilleure personne pour le poste d'enseignant de sciences !"];
+    let scienceDoorD2 = ["Nous avons déjà visite cette classe, tu es sûr de vouloir y retourner ?"];
     let scienceDoorDialog = 0;
-    if (sciencePoint == 0){
+    overWorldPlayer.onCollide("scienceDoor", () => {
         onKeyPress("space", () => {
-            every("scienceDoor", (c) => {
-            if (scienceDoorDialog <= scienceDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
+            if (sciencePoint == 0) {
+                if (scienceDoorDialog <= scienceDoorD.length){
                     scienceDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD, "scienceClassFR");
-                    });
-                }; 
-            } else {
-                scienceDoorDialog = 0;
-            };
-            });
-        });
-    } else if (sciencePoint > 0){
-        onKeyPress("space", () => {
-            every("scienceDoor", (c) => {
-            if (scienceDoorDialog <= scienceDoorD2.length){
-                if (overWorldPlayer.isTouching(c)) {
+                    })}               
+            } else if (sciencePoint > 0) {
+                if (scienceDoorDialog <= scienceDoorD.length){
                     scienceDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD2, "scienceClassFR");
                     });
-                }; 
-            } else {
-                scienceDoorDialog = 0;
-            };
-            });
-        }); 
-    };
+                }
+            }
+        });
+    })
 
     // c) Headmaster's office
-    let HMDoorD = ["C'est le bureau du directeur Umbridge.", "Nous pouvons consulter les CV du personnel enseignant ici et obtenir des informations supplementaires precieuses sur ce qui a fait d'eux des candidats reussis.", "Il sera egalement bon de discuter avec M. Umbridge.", "Apres tout, c'est lui qui les a tous embauches.", "Il a fixe la norme de ce que nous recherchons pour un nouveau professeur de sciences !", "Plus je rassemble d'informations sur les d'enseignants retenus, plus ma suggestion de candidat correspondra a l'ethique de l'ecole !"];
-    let HMDoorD2 = ["J'ai vraiment apprecie notre conversation avec le directeur, mais je pense me souvenir de tout ce dont nous avons parle.", "Il pourrait etre interessant de jeter un autre coup d'œil a ces CV, juste pour etre sûr que nous avons tout ce dont nous avons besoin", "Veux-tu y retourner et y jeter un autre coup d'œil ?"];
+    let HMDoorD = ["C'est le bureau du directeur Umbridge.", "Nous pouvons consulter les CV du personnel enseignant ici...", "et obtenir des informations supplémentaires precieuses sur ce qui a fait d'eux des candidats réussis.", "Il sera également bon de discuter avec M. Umbridge.", "Apres tout, c'est lui qui les a tous embauchés.", "Il a fixeé la norme de ce que nous recherchons pour un nouveau professeur de sciences !", "Plus je rassemble d'informations sur les d'enseignants retenus, plus ma suggestion de candidat correspondra a l'ethique de l'ecole !"];
+    let HMDoorD2 = ["J'ai vraiment apprécié notre conversation avec le directeur, mais je pense me souvenir de tout ce dont nous avons parlé.", "Il pourrait être intéréssant de jeter un autre coup d'œil à ces CV, juste pour être sûr que nous avons tout ce dont nous avons besoin.", "Veux-tu y retourner et y jeter un autre coup d'œil ?"];
     let HMDoorDialog = 0;
-    if (headmPoint == 0) {
+    overWorldPlayer.onCollide("headMastersDoor", () => {
         onKeyPress("space", () => {
-            every("headMastersDoor", (c) => {
-            if (HMDoorDialog <= HMDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
+            if (headmPoint == 0) {
+                if (HMDoorDialog <= HMDoorD.length){
                     HMDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(HMDoorDialog, HMDoorD, "headMasterFR");
-                    });
-                }; 
-            } else {
-                HMDoorDialog = 0;
-            };
-            });
-        });
-    } else if (headmPoint > 0){
-        onKeyPress("space", () => {
-            every("headMastersDoor", (c) => {
-            if (HMDoorDialog <= HMDoorD2.length){
-                if (overWorldPlayer.isTouching(c)) {
+                    })}               
+            } else if (headmPoint > 0) {
+                if (HMDoorDialog <= HMDoorD.length){
                     HMDoorDialog += 1;
                     wait(0.3,() => {
-                        updateDoorsDialog(scienceDoorDialog, HMDoorD2, "cvsFR");
+                        updateDoorsDialog(HMDoorDialog, HMDoorD2, "headMasterFR");
                     });
-                }; 
-            } else {
-                HMDoorDialog = 0;
-            };
-            });
+                }
+            }
         });
-    };
+    })
 
     // d) Player class
     let PCNotReadyDoorD = ["Je ne sais pas pour toi, mais je ne pense pas que nous ayons recueilli assez de donnees pour prendre une decision eclairee pour l'instant...", "Devrions-nous explorer les autres classes avant de revenir ?"];
     let PCReadyDoorD = ["Eh bien, nous avons discute avec beaucoup de gens aujourd'hui.", "Je pense que j'ai maintenant une bonne idee du genre de personne qui conviendrait le mieux au poste. Et toi ?", "Devrions-nous entrer et choisir le meilleur candidat pour le poste ?"];
     let PCDoorDialog = 0;
-    if (playerPoints < 5){
-        onKeyPress("space", () => {
-            every("playerClassDoor", (c) => {
-                if (overWorldPlayer.isTouching(c)) {
-                    PCDoorDialog += 1;
-                    wait(0.3,() => {
-                        updateDialog(PCDoorDialog, PCNotReadyDoorD);
-                    });
-                }; 
-        });
-    });
-    } else {
-        onKeyPress("space", () => {
-            every("playerClassDoor", (c) => {
-            if (PCDoorDialog <= PCReadyDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
-                    PCDoorDialog += 1;
-                wait(0.3,() => {
-                    updateDoorsDialog(PCDoorDialog, PCReadyDoorD, "playerClassFR")});
-                };
-            } else {
-                PCDoorDialog = 0;
-            };
+        overWorldPlayer.onCollide("playerClassDoor", () => {
+            onKeyPress("space", () => {
+                if (playerPoints < 5) {
+                    if (PCDoorDialog <= PCNotReadyDoorD.length){
+                        PCDoorDialog += 1;
+                        wait(0.3,() => {
+                            updateDialog(PCDoorDialog, PCNotReadyDoorD);
+                        })}               
+                } else if (playerPoints <= 5) {
+                    if (PCDoorDialog <= PCNotReadyDoorD.length){
+                        PCDoorDialog += 1;
+                        wait(0.3,() => {
+                            updateDoorsDialog(PCDoorDialog, PCReadyDoorD, "playerClassFR");
+                        });
+                    }
+                }
             });
-        });
-    };
+        })
 
     // e) English class
-    let englishDoorD = ["Voici la classe d'anglais.", `He, ${namePlayer}, ecoute celle-la:` , "The past, present and future walk into a bar...", "It was tense.", "...", "......", "Bref, voyons si M. Moore est disponible.",];
+    let englishDoorD = ["Voici la classe d'anglais.", `Hé, ${namePlayer}, ecoute celle-la:` , "The past, present and future walk into a bar...", "It was tense.", "...", "......", "Bref, voyons si M. Moore est disponible.",];
     let englishDoorD2 = ["Ah de retour a la classe d'anglais !", "'We know what we are, but know not what we may be'.", "Excellent ce Shakespeare. Voudrais-tu parler a nouveau a M. Moore ?"];
     let englishDoorDialog = 0;
-        if (englishPoint == 0){
+    overWorldPlayer.onCollide("englishDoor", () => {
         onKeyPress("space", () => {
-            every("englishDoor", (c) => {
-            if (englishDoorDialog <= englishDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
+            console.log("english"+englishDoorDialog)
+            if (englishPoint == 0) {
+                if (englishDoorDialog <= englishDoorD.length){
                     englishDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(englishDoorDialog, englishDoorD, "englishClassFR");
-                    });
-                };
-            } else {
-                englishDoorDialog = 0;
-            }; 
-            });
-        }); 
-    } else if (englishPoint > 0){
-        onKeyPress("space", () => {
-            every("englishDoor", (c) => {
-            if (englishDoorDialog <= englishDoorD2.length){
-                if (overWorldPlayer.isTouching(c)) {
+                    })}               
+            } else if (englishPoint > 0) {
+                if (englishDoorD2 <= englishDoorD.length){
                     englishDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(englishDoorDialog, englishDoorD2, "englishClassFR");
                     });
-                }; 
-            } else {
-                englishDoorDialog = 0;
-            };
-            });
+                }
+            }
         });
-    };  
+    })
 
     // f) Art Door
-    let artDoorD = ["Voici la classe d'art.", "Mme Lefebvre doit nous attendre.", "Decouvrons comment s'est passee son embauche.", "Je suis sûr qu'elle aura des choses interessantes a nous dire.",];
+    let artDoorD = ["Voici la classe d'art.", "Mme Lefebvre doit nous attendre.", "Découvrons comment s'est passée son embauche.", "Je suis sûr qu'elle aura des choses intéressantes à nous dire.",];
     let artDoorD2 = ["De retour ici ? Mme Lefebvre nous a ete tres utile.", "J'aimerais bien avoir une meche bleue dans les cheveux comme elle.", "Tu veux lui reparler ?"];
     let artDoorDialog = 0;
-    if (artPoint == 0){
+    overWorldPlayer.onCollide("artDoor", () => {
         onKeyPress("space", () => {
-            every("artDoor", (c) => {
-            if (artDoorDialog <= artDoorD.length){
-                if (overWorldPlayer.isTouching(c)) {
+            console.log("art"+artDoorDialog)
+            if (artPoint == 0) {
+                if (artDoorDialog <= artDoorD.length){
                     artDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(artDoorDialog, artDoorD, "artClassFR");
-                    });
-                };
-            } else {
-                artDoorDialog = 0;
-            }; 
-            });
-        }); 
-    } else if (artPoint > 0){
-        onKeyPress("space", () => {
-            every("artDoor", (c) => {
-            if (artDoorDialog <= artDoorD2.length){
-                if (overWorldPlayer.isTouching(c)) {
+                    })} else {
+                        overWorldPlayer.onCollide("artDoor", () => {
+                            restart()
+                        });
+                    }              
+            } else if (artPoint > 0) {
+                if (artDoorDialog <= artDoorD.length){
                     artDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(artDoorDialog, artDoorD2, "artClassFR");
                     });
-                };
-            } else {
-                artDoorDialog = 0;
-            }; 
-            });
-        });  
-    }
+                }
+            }
+        });
+    })
 });
-
 //////////////////////////////////////////////////// Scene 5: Maths class /////////////////////////////////////////////////////////////////
 scene("mathsClassFR", () =>{
     let classRoom = add([
@@ -2467,4 +2398,4 @@ Appuyez sur la barre espace pour rejouer`, {
 
 
 // Initialize game 
-go("accueil");
+go("corridorFR");
