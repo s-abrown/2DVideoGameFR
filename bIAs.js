@@ -571,8 +571,6 @@ scene("corridorFR", () =>{
     });
     onKeyPress("n", () => {
         delegetthing();
-        //alert("ending interaction")
-        //onCollideEnd("overWorldPlayer", "englishDoor");
     });
     };
     function updateDoorsDialog(v, t, string) {
@@ -594,11 +592,15 @@ scene("corridorFR", () =>{
     let lockerDialog = 0;
     overWorldPlayer.onCollide("locker", () => {
         onKeyPress("space", () => {
-            console.log('locker'+lockerDialog)
-            lockerDialog += 1;
-            wait(0.3,() => {
-                updateDialog(lockerDialog, lockerD);
-            });
+            if (lockerDialog <= lockerD.length){
+                console.log('locker'+lockerDialog)
+                lockerDialog += 1;
+                wait(0.3,() => {
+                    updateDialog(lockerDialog, lockerD);
+                });
+            } else if (lockerDialog > lockerD.length){
+                delete lockerDialog
+            }
         });
     })
 
@@ -607,11 +609,15 @@ scene("corridorFR", () =>{
     let plantDialog = 0;
     overWorldPlayer.onCollide("plant", () => {
         onKeyPress("space", () => {
-            console.log('plant'+plantDialog)
-            plantDialog += 1;
-            wait(0.3,() => {
-                updateDialog(plantDialog, plantsD);
-            });
+            if (plantDialog <= plantsD.length){
+                console.log('plant'+plantDialog)
+                plantDialog += 1;
+                wait(0.3,() => {
+                    updateDialog(plantDialog, plantsD);
+                })
+            } else if (plantDialog > plantsD.length){
+                delete plantDialog
+            };
         });
     })
 
@@ -620,11 +626,15 @@ scene("corridorFR", () =>{
     let bathroomDialog = 0;
     overWorldPlayer.onCollide("bathroomDoor", () => {
         onKeyPress("space", () => {
-            console.log('bathroom'+bathroomDialog)
-            bathroomDialog += 1;
-            wait(0.3,() => {
-                updateDialog(bathroomDialog, bathroomD);
-            });
+            if (bathroomDialog <= bathroomD.length){
+                console.log('bathroom'+bathroomDialog)
+                bathroomDialog += 1;
+                wait(0.3,() => {
+                    updateDialog(bathroomDialog, bathroomD);
+                });
+            } else if (bathroomDialog > bathroomD.length){
+                delete bathroomDialog
+            }
         });
     });
 
@@ -637,18 +647,24 @@ scene("corridorFR", () =>{
     let mathsDoorDialog = 0;
     overWorldPlayer.onCollide("mathsDoor", () => {
         onKeyPress("space", () => {
+            console.log('maths'+mathsDoorDialog)
             if (mathsPoint == 0) {
                 if (mathsDoorDialog <= mathsDoorD.length){
                     mathsDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD, "mathsClassFR");
-                    })}               
+                    })
+                } else if (mathsDoorDialog > mathsDoorD.length) {
+                    delete mathsDoorDialog
+                }               
             } else if (mathsPoint > 0) {
                 if (mathsDoorDialog <= mathsDoorD.length){
                     mathsDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD2, "mathsClassFR");
                     });
+                } else if (mathsDoorDialog > mathsDoorD.length) {
+                    delete mathsDoorDialog
                 }
             }
         });
@@ -660,18 +676,24 @@ scene("corridorFR", () =>{
     let scienceDoorDialog = 0;
     overWorldPlayer.onCollide("scienceDoor", () => {
         onKeyPress("space", () => {
+            console.log('science'+scienceDoorDialog)
             if (sciencePoint == 0) {
                 if (scienceDoorDialog <= scienceDoorD.length){
                     scienceDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD, "scienceClassFR");
-                    })}               
+                    })
+                } else if (scienceDoorDialog > scienceDoorD.length) {
+                        delete scienceDoorDialog
+                }               
             } else if (sciencePoint > 0) {
                 if (scienceDoorDialog <= scienceDoorD.length){
                     scienceDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD2, "scienceClassFR");
                     });
+                } else if (scienceDoorDialog > scienceDoorD.length) {
+                    delete scienceDoorDialog
                 }
             }
         });
@@ -688,14 +710,19 @@ scene("corridorFR", () =>{
                     HMDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(HMDoorDialog, HMDoorD, "headMasterFR");
-                    })}               
+                    })
+                } else if (HMDoorDialog > HMDoorD.length){
+                        delete HMDoorDialog
+                }               
             } else if (headmPoint > 0) {
                 if (HMDoorDialog <= HMDoorD.length){
                     HMDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(HMDoorDialog, HMDoorD2, "headMasterFR");
                     });
-                }
+                } else if (HMDoorDialog > HMDoorD.length){
+                    delete HMDoorDialog
+                }   
             }
         });
     })
@@ -706,19 +733,25 @@ scene("corridorFR", () =>{
     let PCDoorDialog = 0;
         overWorldPlayer.onCollide("playerClassDoor", () => {
             onKeyPress("space", () => {
+                console.log("pc"+PCDoorDialog)
                 if (playerPoints < 5) {
                     if (PCDoorDialog <= PCNotReadyDoorD.length){
                         PCDoorDialog += 1;
                         wait(0.3,() => {
                             updateDialog(PCDoorDialog, PCNotReadyDoorD);
-                        })}               
+                        })
+                    } else if (PCDoorDialog > PCNotReadyDoorD.length){
+                        delete PCDoorDialog
+                    }                 
                 } else if (playerPoints <= 5) {
                     if (PCDoorDialog <= PCNotReadyDoorD.length){
                         PCDoorDialog += 1;
                         wait(0.3,() => {
                             updateDoorsDialog(PCDoorDialog, PCReadyDoorD, "playerClassFR");
                         });
-                    }
+                    } else if (PCDoorDialog > PCNotReadyDoorD.length){
+                        delete PCDoorDialog
+                    }  
                 }
             });
         })
@@ -735,14 +768,19 @@ scene("corridorFR", () =>{
                     englishDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(englishDoorDialog, englishDoorD, "englishClassFR");
-                    })}               
+                    })
+                } else if (englishDoorDialog > englishDoorD.length){
+                    delete englishDoorDialog
+                }                 
             } else if (englishPoint > 0) {
                 if (englishDoorD2 <= englishDoorD.length){
                     englishDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(englishDoorDialog, englishDoorD2, "englishClassFR");
                     });
-                }
+                } else if (englishDoorDialog > englishDoorD.length){
+                    delete englishDoorDialog
+                } 
             }
         });
     })
@@ -754,22 +792,24 @@ scene("corridorFR", () =>{
     overWorldPlayer.onCollide("artDoor", () => {
         onKeyPress("space", () => {
             console.log("art"+artDoorDialog)
+            console.log("art"+artDoorDialog)
             if (artPoint == 0) {
                 if (artDoorDialog <= artDoorD.length){
                     artDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(artDoorDialog, artDoorD, "artClassFR");
-                    })} else {
-                        overWorldPlayer.onCollide("artDoor", () => {
-                            restart()
-                        });
-                    }              
+                    })
+                } else if (artDoorDialog > artDoorD.length){
+                    delete artDoorDialog
+                }              
             } else if (artPoint > 0) {
                 if (artDoorDialog <= artDoorD.length){
                     artDoorDialog += 1;
                     wait(0.3,() => {
                         updateDoorsDialog(artDoorDialog, artDoorD2, "artClassFR");
                     });
+                } else if (artDoorDialog > artDoorD.length){
+                    delete artDoorDialog
                 }
             }
         });
