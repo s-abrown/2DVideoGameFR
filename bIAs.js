@@ -1054,19 +1054,19 @@ scene("headMasterFR", () =>{
     ]);
 
     const dialogs = [
-        [ "headmasterAvatar", `${namePlayer}! Je suppose que tu as ete choisi pour travailler avec K.A.T.E. afin de tester notre nouveau processus d'embauche, hein ?` ],
-        [ "headmasterAvatar", "Je dirais que tout cela semble un peu alambique... apres tout, mes decisions en matiere d'embauche sont presque toujours correctes, si je peux me permettre." ],
-        [ "headmasterAvatar", `Mais le conseil d'administration de l'ecole pense qu'on doit "s'adapter a son temps" donc...` ],
-        [ "headmasterAvatar", "dans tous les cas, tes commentaires a la fin de cette petite experience nous seront d'une grande utilite." ],
+        [ "headmasterAvatar", `${namePlayer}! Je suppose que tu as été choisi pour travailler avec K.A.T.E. afin de tester notre nouveau processus d'embauche, hein ?` ],
+        [ "headmasterAvatar", "Je dirais que tout cela semble un peu alambiqué... après tout, mes décisions en matière d'embauche sont presque toujours correctes, si je peux me permettre." ],
+        [ "headmasterAvatar", `Mais le conseil d'administration de l'école pense qu'on doit "s'adapter à son temps" donc...` ],
+        [ "headmasterAvatar", "dans tous les cas, tes commentaires à la fin de cette petite expérience nous seront d'une grande utilité." ],
         [ "KATE", "Merci, Mr. Umbridge!" ],
         [ "headmasterAvatar", "Eh bien, ne me remerciez pas encore. Voyons d'abord quelles sont vos recommandations d'embauche. Et K.A.T.E., essaye de t'y prendre logiquement, d'accord ?" ],
-        [ "headmasterAvatar", "Je sais que les filles ont tendance a etre emotives a propos des choses, mais le succes de cette ecole depend de bonnes pratiques d'embauche." ],
-        [ "KATE", "Je peux vous assurer monsieur, que mes recommandations seront choisies avec la plus grande rationalite. Apres tout, j'ai passe tout mon temps ici a observer et a apprendre de vos propres employes !" ],
+        [ "headmasterAvatar", "Je sais que les filles ont tendance à être émotives à propos des choses, mais le succès de cette école dépend de bonnes pratiques d'embauche." ],
+        [ "KATE", "Je peux vous assurer monsieur, que mes recommandations seront choisies avec la plus grande rationalité. Après tout, j'ai passé tout mon temps ici à observer et à apprendre de vos propres employés !" ],
         [ "KATE", "(et je ne suis pas une fille, je suis une Intelligence Artificielle !)" ],
         [ "headmasterAvatar", "Hm, quoi ?" ],
-        [ "headmasterAvatar", "Bref, de toute maniere j'ai pratiquement deja decide qui je voudrais engager. Je suis interesse de voir qui vous allez recommander tous les deux." ],
-        [ "KATE", "Parler directement aux enseignants ici m'a permis de me faire une idee du type de profil que vous recherchez, mais il serait egalement utile de jeter un coup d'oeil a leurs CV." ],
-        [ "KATE", "Apres tout, c'est l'un des moyens principal par lequel les gens sont embauches." ],
+        [ "headmasterAvatar", "Bref, de toute manière j'ai pratiquement déjà décide qui je voudrais engager idéalement. Je suis intéressé de voir qui vous allez recommander tous les deux." ],
+        [ "KATE", "Parler directement aux enseignants ici m'a permis de me faire une idée du type de profil que vous recherchez, mais il serait également utile de jeter un coup d'oeil à leurs CV." ],
+        [ "KATE", "Apres tout, c'est l'un des moyens principaux par lequel les gens sont embauchés." ],
         [ "headmasterAvatar", "En effet. Vous pouvez les consulter ici dans mon bureau." ],       
     ];
     let curDialog = 0;
@@ -1202,7 +1202,7 @@ scene("cvsFR", () => {
     // Dialogue for when the player has seen at least 4 CV's
     let cvDialog2 = ["C'etait tres instructif!", "Maintenant je suis mieux qui recommander!"];
     // Dialogue for when the player comes back to the overview without having read at least four 4 CV's
-    let cvDialog3 = ["C'etait vraiment interessant.", "Devrions-nous en examiner d'autres?"];
+    let cvDialog3 = ["C'etait vraiment intéressant.", "Devrions-nous en examiner d'autres?"];
     let cvNumber = 0;
     if (cvReadCounter == 0){
             onKeyPress("space", () => {
