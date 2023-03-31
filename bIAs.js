@@ -1163,7 +1163,7 @@ scene("cvsFR", () => {
         pos(portrait.pos),
     ]);
     function ChoiceCv (){
-        txt.text = "Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathematiques, [C] pour voir le CV de votre professeur de sciences et [D] pour voir le CV de votre professeur d'arts.";
+        txt.text = "Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathématiques, [C] pour voir le CV de votre professeur de sciences et [D] pour voir le CV de votre professeur d'arts.";
         onKeyPress("a", () => {
             go("1FR")
         });
@@ -1198,11 +1198,11 @@ scene("cvsFR", () => {
         };
     };
     // Dialogue for when player first enters the scene
-    let cvDialog = ["Voici les quatre CV que nous pouvons examiner pour avoir une meilleure idee de la personne a engager."];
+    let cvDialog = ["Voici les quatre CV que nous pouvons examiner pour avoir une meilleure idée de la personne à engager."];
     // Dialogue for when the player has seen at least 4 CV's
-    let cvDialog2 = ["C'etait tres instructif!", "Maintenant je suis mieux qui recommander!"];
+    let cvDialog2 = ["C'était très informatif!", "Maintenant, je sais mieux qui recommander!"];
     // Dialogue for when the player comes back to the overview without having read at least four 4 CV's
-    let cvDialog3 = ["C'etait vraiment intéressant.", "Devrions-nous en examiner d'autres?"];
+    let cvDialog3 = ["C'était vraiment intéressant.", "Devrions-nous en examiner d'autres?"];
     let cvNumber = 0;
     if (cvReadCounter == 0){
             onKeyPress("space", () => {
@@ -1260,7 +1260,7 @@ scene("1FR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur [B] pour voir le CV de votre professeur de mathematiques, [C] pour voir le CV de votre professeur de sciences, et [D] pour voir le CV de votre professeur d'arts. Appuyez sur la barre espace pour quitter.", { 
+        text("Appuyez sur [B] pour voir le CV de votre professeur de mathématiques, [C] pour voir le CV de votre professeur de sciences, et [D] pour voir le CV de votre professeur d'arts. Appuyez sur la barre espace pour quitter.", { 
             size: 32, 
             width: 1000,
             font: "monospace",
@@ -1371,7 +1371,7 @@ scene("3FR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathematiques et [D] pour voir le CV de votre professeur de lettres. Appuyez sur la barre espace pour quitter.", { 
+        text("Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathématiques et [D] pour voir le CV de votre professeur de lettres. Appuyez sur la barre espace pour quitter.", { 
             size: 32, 
             width: 1000,
             font: "monospace",
@@ -1427,7 +1427,7 @@ scene("4FR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathematiques, et [C] pour voir le CV de votre professeur de sciences. Appuyez sur la barre espace pour quitter.", { 
+        text("Appuyez sur [A] pour voir le CV de votre professeur d'anglais, [B] pour voir le CV de votre professeur de mathématiques, et [C] pour voir le CV de votre professeur de sciences. Appuyez sur la barre espace pour quitter.", { 
             size: 32, 
             width: 1000,
             font: "monospace",
@@ -1488,40 +1488,40 @@ scene("englishClassFR", () =>{
     const dialogs = [
         [ "englishTeacherAvatar", "Bonjour!" ],
         [ "englishTeacherAvatar", `C'est ${namePlayer}, n'est-ce pas ?` ],
-        [ "englishTeacherAvatar", "Desole si je pose cette question, mais tu peux imaginer combien il est difficile de memoriser tant de nouveaux prenoms..." ],
-        [ "KATE", "Oh? Vous etes un nouvel enseignant ?" ],
+        [ "englishTeacherAvatar", "Désolé si je pose cette question, mais tu peux imaginer combien il est difficile de mémoriser tant de nouveaux prénoms..." ],
+        [ "KATE", "Oh? Vous êtes un nouvel enseignant ?" ],
         [ "englishTeacherAvatar", "Je travaille ici depuis seulement deux semaines. Je suis professeur remplaçant pour Mme Smith." ],
-        [ "KATE", "Parfait ! Votre experience concernant le processus d'embauche ici est donc la plus recente." ],
-        [ "KATE", "Vous serez certainement tres utile pour recueillir des donnees sur les pratiques d'embauche actuelles dans cette ecole." ],
-        [ "englishTeacherAvatar", "Bien sur, mais je dois vous avertir que mon experience n'est en aucun cas ce qu'on pourrait appeler 'typique'." ],
-        [ "englishTeacherAvatar", "J'ai eu vent que le directeur de l'ecole cherchait desesperement a trouver un remplaçant le plus rapidement possible pour remplacer une femme qui a dû partir en conge de maternite." ],
-        [ "englishTeacherAvatar", "J'ai entendu dire qu'elle attendait des jumeaux donc entre vous et moi... Je pense qu'elle ne pourra pas revenir au travail de sitôt." ],
-        [ "KATE", "Vous cherchez a garder ce poste indefiniment ?" ],
-        [ "englishTeacherAvatar", "Je veux dire... personne ne l'a forcee a avoir des enfants. Ce n'est que justice que j'aie une chance d'avoir le poste de façon permanente." ],
-        [ "KATE", "Et si elle veut revenir a son poste d'enseignant apres avoir eu ses enfants ?" ],
+        [ "KATE", "Parfait ! Votre expérience concernant le processus d'embauche ici est donc la plus recente." ],
+        [ "KATE", "Vous serez certainement très utile pour recueillir des données sur les pratiques d'embauche actuelles dans cette école." ],
+        [ "englishTeacherAvatar", "Bien sûr, mais je dois vous avertir que mon expérience n'est en aucun cas ce qu'on pourrait appeler 'typique'." ],
+        [ "englishTeacherAvatar", "J'ai eu vent que le directeur de l'école cherchait désespérément à trouver un remplaçant le plus rapidement possible pour remplacer une femme qui a dû partir en congé de maternité." ],
+        [ "englishTeacherAvatar", "J'ai entendu dire qu'elle attend des jumeaux donc entre vous et moi... Je pense qu'elle ne pourra pas revenir au travail de sitôt." ],
+        [ "KATE", "Vous cherchez à garder ce poste indéfiniment ?" ],
+        [ "englishTeacherAvatar", "Je veux dire... personne ne l'a forcé à avoir des enfants. Ce n'est que justice que j'ai une chance d'avoir le poste de façon permanente." ],
+        [ "KATE", "Et si elle veut revenir à son poste d'enseignant apràs avoir eu ses enfants ?" ],
         [ "englishTeacherAvatar", "Appelez ça une competition amicale. Offre et demande et tout ça." ],
-        [ "englishTeacherAvatar", "Ecoutez, je comprends... honnetement je comprends." ],
-        [ "englishTeacherAvatar", "Apres tout, quand ma femme a eu des enfants, elle a dû arreter de travailler pour s'occuper des petits coquins a plein temps." ],
+        [ "englishTeacherAvatar", "Ecoutez, je comprends... honnêtement je comprends." ],
+        [ "englishTeacherAvatar", "Apres tout, quand ma femme a eu des enfants, elle a dû arreter de travailler pour s'occuper des petits coquins à plein temps." ],
         [ "englishTeacherAvatar", `C'est comme ça que ces choses doivent se passer. Moi, je ne presente pas de "risques futurs".`],
         [ "englishTeacherAvatar", "Ce sont les mots du directeur, pas les miens." ],
         [ "englishTeacherAvatar", "On s'entend bien lui et moi. Il a un bon groupe de gars qui travaillent ici." ],
-        [ "englishTeacherAvatar", "Nous allons meme a la peche ensemble de temps en temps." ],
-        [ "englishTeacherAvatar", "Nous nous entendons bien. Je me sens deja comme si j'etais a ma place ici. M. Mackenzie m'a pris sous son aile, m'a montre les ficelles du metier. Les choses se passent bien pour moi ici." ],
-        [ "KATE", "Les bons rapports entre collegues sont importants pour favoriser un environnement de travail productif." ],
-        [ "englishTeacherAvatar", "Exactement. C'est pas de ma faute si je m'integre mieux. Les gars et moi sommes d'accord sur beaucoup de choses. Nous nous entendons bien." ],
+        [ "englishTeacherAvatar", "Nous allons même a la pêche ensemble de temps en temps." ],
+        [ "englishTeacherAvatar", "Nous nous entendons bien. Je me sens déjà comme si je suis à ma place ici. M. Mackenzie m'a pris sous son aile, m'a montré les ficelles du métier. Les choses se passent bien pour moi ici." ],
+        [ "KATE", "Les bons rapports entre collègues sont importants pour favoriser un environnement de travail productif." ],
+        [ "englishTeacherAvatar", "Exactement. Ce n'est pas de ma faute si je m'intègre mieux. Les gars et moi sommes d'accord sur beaucoup de choses. Nous nous entendons bien." ],
         [ "KATE", "Avez-vous eu de la concurrence pour obtenir le poste de remplaçant ?" ],
-        [ "englishTeacherAvatar", "Pas vraiment. J'ai beaucoup d'experience dans ce domaine et je m'assure que mes eleves travaillent avec assiduite." ],
-        [ "englishTeacherAvatar", "J'ai du faire quelques changements dans ma methode." ],
+        [ "englishTeacherAvatar", "Pas vraiment. J'ai beaucoup d'expérience dans ce domaine et je m'assure que mes élèves travaillent avec assiduité." ],
+        [ "englishTeacherAvatar", "J'ai du faire quelques changements dans ma méthode." ],
         [ "englishTeacherAvatar", "Il me semble que les enfants ici sont devenus trop complaisants avec leur travail. Pas assez de William Wordsworth, trop de Neil Gaiman." ],
-        [ "englishTeacherAvatar", "Je ne suis pas pret d'encourager toutes ces foutaises de 'justice sociale' ici." ],
-        [ "KATE", "Vous surveillez de pres le contenu litteraire que vos eleves consomment ?" ],
-        [ "englishTeacherAvatar", "Les parents nous confient leurs enfants pour qu'on leur enseigne correctement. Ils sont ici pour reussir dans la vie, pas pour perdre leur temps a divertir des notions frivoles." ],
-        [ "KATE", "Votre devouement a la reussite de vos eleves est admirable." ],
+        [ "englishTeacherAvatar", "Je ne suis pas prêt d'encourager toutes ces foutaises de 'justice sociale' ici." ],
+        [ "KATE", "Vous surveillez de près le contenu littéraire que vos élèves consomment ?" ],
+        [ "englishTeacherAvatar", "Les parents nous confient leurs enfants pour qu'on leur enseigne correctement. Ils sont ici pour réussir dans la vie, pas pour perdre leur temps à divertir des notions frivoles." ],
+        [ "KATE", "Votre dévouement à la réussite de vos élèves est admirable." ],
         [ "englishTeacherAvatar", `Leur succes est mon succes, n'est-ce pas, ${namePlayer}?` ],
-        [ "englishTeacherAvatar", "M. Mackenzie a la bonne idee sur ce point, je vous le dis." ],
-        [ "KATE", "Merci pour votre temps. J'ai hate de consulter votre CV pour completer ma collecte de donnees." ],
-        [ "englishTeacherAvatar", "Pas de soucis. Je me rejouis de rencontrer bientôt mon nouveau collegue." ],
-        [ "englishTeacherAvatar", "On pourra l'emmener faire une partie de peche entre mecs." ],        
+        [ "englishTeacherAvatar", "M. Mackenzie à la bonne idée sur ce point, je vous le dis." ],
+        [ "KATE", "Merci pour votre temps. J'ai hâte de consulter votre CV pour compléter ma collecte de données." ],
+        [ "englishTeacherAvatar", "Pas de soucis. Je me réjouis de rencontrer bientôt mon nouveau collègue." ],
+        [ "englishTeacherAvatar", "On pourra l'emmener faire une partie de pêche entre mecs." ],        
     ];
     let curDialog = 0;
     const avatar = add([
