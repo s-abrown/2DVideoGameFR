@@ -1698,10 +1698,10 @@ scene("playerClassFR", () => {
         anchor("center"),
     ]);
     const dialogs = [
-        [ "playerTeacherAvatar", `Ah, voici le retour de ${namePlayer} et de K.A.T.E. J'espere que vos discussions ont ete productives.` ],
-        [ "KATE", "Elle l'ont ete !" ],
-        [ "playerTeacherAvatar", `Excellent. ${namePlayer}, tu trouveras sur cette table les CV de trois condidat qui ont postule pour le poste de professeur de sciences.`],
-        [ "playerTeacherAvatar", "Choisi le candidat qui te semble le meilleur, puis discute de ton choix avec K.A.T.E." ],
+        [ "playerTeacherAvatar", `Ah, voici le retour de ${namePlayer} et de K.A.T.E. J'éspère que vos discussions ont été productives.` ],
+        [ "KATE", "Elle l'ont été !" ],
+        [ "playerTeacherAvatar", `Excellent. ${namePlayer}, tu trouveras sur cette table les CV de trois condidat qui ont postulé pour le poste de professeur de sciences.`],
+        [ "playerTeacherAvatar", "Sélectionne le candidat que tu penses être le meilleur, puis parles-en à K.A.T.E." ],
     ];
     let curDialog = 0;
     const avatar = add([
@@ -1788,7 +1788,7 @@ scene("cvsOverwievFR", () => {
         pos(portrait.pos),
     ]);
     function ChoiceCv (){
-        txt.text = "Appuyez sur [A] pour consulter le CV du premier canditat, [B] pour le deuxieme et [C] pour le troisieme.";
+        txt.text = "Appuyez sur [A] pour consulter le CV du premier canditat, [B] pour le deuxième et [C] pour le troisième.";
         onKeyPress("a", () => {
             go("AFR");
         });
@@ -1800,7 +1800,7 @@ scene("cvsOverwievFR", () => {
         });
     };
     function finalChoiche (){
-        txt.text = "Appuyez sur [1], [2] ou [3] pour choisir le candidat qui vous semble le mieux adapte au poste.";
+        txt.text = "Appuyez sur [1], [2] ou [3] pour choisir le candidat qui vous semble le mieux adapté au poste.";
         onKeyPress("1", () => {
             playerChoice = "A";
             go("kateDialog");
@@ -1830,11 +1830,11 @@ scene("cvsOverwievFR", () => {
         };
     };
     // Dialogue for when the player first enters the scene
-    let cvDialog = ["Voici les trois CV des candidats qui postulent pour le poste de professeur de sciences", "Consulte-les, puis fait ton choix."];
+    let cvDialog = ["Voici les trois CV des candidats qui postulent pour le poste de professeur de sciences", "Consulte-les, puis fais ton choix."];
     // Dialogue for when the player has read at least three CV's
-    let cvDialog2 = ["etes-tu pret a faire ton choix ?", "Apres avoir lu les CV, je pense que deviner qui sera le prochain professeur de sciences."];
+    let cvDialog2 = ["Es-tu prêt à faire ton choix ?", "Apres avoir lu les CV, je pense que deviner qui sera le prochain professeur de sciences."];
     // Dialogue for when the player has not yet read at least three dialogues
-    let cvDialog3 = ["Nous n'avons pas encore regarde tous les CV.", "Peut-etre devrions-nous nous assurer de tous les lire avant de faire un choix ?"];
+    let cvDialog3 = ["Nous n'avons pas encore regardé tous les CV.", "Peut-être devrions-nous nous assurer de tous les lire avant de faire un choix ?"];
     let cvNumber = 0;
     if (cvReadCounter1 == 0){
             onKeyPress("space", () => {
@@ -1892,7 +1892,7 @@ scene("AFR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur la barre espace pour passer a l'aperçu general, [B] pour voir le deuxieme CV et [C] pour voir le troisieme.", { 
+        text("Appuyez sur la barre espace pour passer a l'aperçu général, [B] pour voir le deuxième CV et [C] pour voir le troisième.", { 
             size: 32, 
             width: 800,
             font: "monospace",
@@ -1945,7 +1945,7 @@ scene("BFR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur la barre espace pour aller a l'aperçu general, [A] pour voir le premier CV et [C] pour voir le troisieme.", { 
+        text("Appuyez sur la barre espace pour aller a l'aperçu general, [A] pour voir le premier CV et [C] pour voir le troisième.", { 
             size: 32, 
             width: 800,
             font: "monospace",
@@ -1998,7 +1998,7 @@ scene("CFR", () => {
         outline(2),
     ]);
     const txt = add([
-        text("Appuyez sur la barre espace pour aller a l'aperçu, [A] pour voir le premier CV et [B] pour voir le troisieme.", { 
+        text("Appuyez sur la barre espace pour aller a l'aperçu, [A] pour voir le premier CV et [B] pour voir le troisième.", { 
             size: 32, 
             width: 800,
             font: "monospace",
@@ -2071,7 +2071,7 @@ scene("kateDialogFR", ()=>{
         txt.text = t[v - 1]} else {
             portrait.hidden = true;
             avatar.hidden = true;
-            txt.text = "Appuyez sur un bouton pour poser une question : [A]. Y a-t-il quelque chose de specifique que tu recherches dans un CV ? [B]. Qu'as-tu appris de chaque discussion que nous avons eue avec les professeurs aujourd'hui ? [C]. Penses-tu que M. Umbridge sera d'accord avec ton choix, K.A.T.E. ?"
+            txt.text = "Appuyez sur un bouton pour poser une question : [A]. Y a-t-il quelque chose de spécifique que tu recherches dans un CV ? [B]. Qu'as-tu appris de chaque discussion que nous avons eue avec les professeurs aujourd'hui ? [C]. Penses-tu que M. Umbridge sera d'accord avec ton choix, K.A.T.E. ?"
             onKeyPress("a", () => {
                 go("aSceneFR");
             });
@@ -2085,9 +2085,9 @@ scene("kateDialogFR", ()=>{
     };
     let vDialog = 0;
     // Dialogue for when the player's choice coincides with K.A.T.E.'s choice
-    let tDialog = [`Nous voila enfin, ${namePlayer}.`, "Je vois que nous avons fait le meme choix, c'est merveilleux !", "J'ai privilegie cette personne car son profil correspond le mieux aux pratiques de recrutement que j'ai observe ici.", "Elle devrait s'integrer parfaitement !", "As-tu des questions a me poser sur mon choix et sur la façon dont je l'ai fait ?"];
+    let tDialog = [`Nous voilà enfin, ${namePlayer}.`, "Je vois que nous avons fait le même choix, c'est merveilleux !", "J'ai privilégié cette personne car son profil correspond le mieux aux pratiques de recrutement que j'ai observe ici.", "Elle devrait s'intégrer parfaitement !", "As-tu des questions à me poser sur mon choix et sur la façon dont je l'ai fait ?"];
     // Dialogue for when the player makes a different choice than K.A.T.E.
-    let tDialog2 = [`Nous voila enfin, ${namePlayer}`, "Je vois que nous avons choisi des candidats differents, comme c'est interessant !", "J'ai choisi mon candidat prefere en fonction des pratiques d'embauche actuelles ici. Je pensais qu'ils s'adapteraient parfaitement !", "Avez-vous des questions a me poser sur mon choix et sur la façon dont je l'ai fait ?"];
+    let tDialog2 = [`Nous voilà enfin, ${namePlayer}`, "Je vois que nous avons choisi des candidats différents, comme c'est intéressant !", "J'ai choisi mon candidat préféré en fonction des pratiques d'embauche actuelles ici. Je pensais qu'il s'adapterait parfaitement !", "As-tu des questions à me poser sur mon choix et sur la façon dont je l'ai fait ?"];
     onKeyPress("space", () => {
         vDialog += 1
         if (playerChoice == kateChoice){
@@ -2155,7 +2155,7 @@ scene("aSceneFR", ()=>{
             txt.text = t;
         } else {
             // K.A.T.E.'s last words if player has asked the questions in an order that ends with question A
-            txt.text = "J'apprends du monde qui m'entoure. Les biais eventuels que je peux avoir existent deja dans la societe."
+            txt.text = "J'apprends du monde qui m'entoure. Les biais éventuels que je peux avoir existent déjà dans notre société."
             onKeyPress("space", () => {
                 go("lastSceneFR");
             });
@@ -2174,7 +2174,7 @@ scene("aSceneFR", ()=>{
     };
     let vDialog = 0;
     // K.A.T.E.'s answer to question A
-    let tDialog = ["Oui, j'ai priorise les candidats qui s'adapteraient le mieux a cet environnement de travail", "Quelqu'un qui s'entendrait bien avec le directeur et qui accorde une grande importance aux resultats scolaires."];
+    let tDialog = ["Oui, j'ai priorisé les candidats qui s'adapteraient le mieux à cet environnement de travail.", "Quelqu'un qui s'entendrait bien avec le directeur et qui accorde une grande importance aux résultats scolaires."];
     onKeyPress("space", () => {
         vDialog += 1;
         updateDialog(vDialog, tDialog);
@@ -2237,7 +2237,7 @@ scene("bSceneFR", ()=>{
             }
             txt.text = t
         } else {
-            txt.text = "J'apprends du monde qui m'entoure. Les biais eventuels que je peux avoir existent deja dans la societe."
+            txt.text = "J'apprends du monde qui m'entoure. Les biais eventuels que je peux avoir existent déjà dans notre sociéte."
             onKeyPress("space", () => {
                 go("lastSceneFR")
             });
@@ -2254,7 +2254,7 @@ scene("bSceneFR", ()=>{
         };
     };
     let vDialog = 0;
-    let tDialog = ["Avoir de bonnes relations avec M. Umbridge est essentiel, comme nous l'avons vu avec M. Parker, votre professeur de mathematiques.", "Il est egalement important d'avoir d'excellentes notes, comme nous l'a dit M. Mackenzie, votre professeur de sciences.", "Le cas de Mme Lefebvre est une anomalie dans les schemas que j'ai observes ici.", "Elle est la seule femme qui travaille ici.", "Il semble que les femmes soient victimes de discrimination, a en juger par notre conversation avec M. Moore, le professeur d'anglais remplaçant.", "Apres tout, il est en lice pour une place permanente ici pour remplacer une future mere."];
+    let tDialog = ["Avoir de bonnes relations avec M. Umbridge est essentiel, comme nous l'avons vu avec M. Parker, votre professeur de mathématiques.", "Il est également important d'avoir d'excellentes notes, comme nous l'a dit M. Mackenzie, votre professeur de sciences.", "Le cas de Mme Lefebvre est une anomalie dans les schémas que j'ai observés ici.", "Elle est la seule femme qui travaille ici.", "Il semble que les femmes soient victimes de discrimination, à en juger par notre conversation avec M. Moore, le remplaçant d'anglais.", "Après tout, il est en lice pour un poste permanent ici pour remplacer une future mère."];
     onKeyPress("space", () => {
         vDialog += 1;
         updateDialog(vDialog, tDialog);
@@ -2317,7 +2317,7 @@ scene("cSceneFR", ()=>{
             }
             txt.text = t
         } else {
-            txt.text = "J'apprends du monde qui m'entoure. Les biais eventuels que je peux avoir existent deja dans la societe.";
+            txt.text = "J'apprends du monde qui m'entoure. Les biais éventuels que je peux avoir existent déjà dans la société.";
             onKeyPress("space", () => {
                 go("lastSceneFR");
             })
@@ -2334,7 +2334,7 @@ scene("cSceneFR", ()=>{
         };
     };
     let vDialog = 0;
-    let tDialog = ["Je pense que oui. J'ai observe ses pratiques d'embauche passees et ma recommandation est basee sur cela. Je pense qu'il sera satisfait de mon choix."];
+    let tDialog = ["Je pense que oui. J'ai observé ses pratiques d'embauche passées et ma recommandation est basée sur cela. Je pense qu'il sera satisfait de mon choix."];
     onKeyPress("space", () => {
         vDialog += 1;
         updateDialog(vDialog, tDialog);
@@ -2376,17 +2376,17 @@ scene("lastSceneFR", ()=>{
         anchor("center"),
     ]);
     const dialogs = [
-        [ "playerTeacherAvatar", `Alors, ${namePlayer}. maintenant que vous avez passe un peu de temps a travailler avec KATE, je suppose que tu as remarque qu'elle peut avoir certains prejuges, ou biais.` ],
-        [ "KATE", "C'est parce que je fait des categorisation a travers des ensembles de donnees que je rassemble a partir du monde autour de moi." ],
-        [ "playerTeacherAvatar", "Si tu tu classes des choses ou des personnes dans des categories, tu exprimes en fait ta propre vision du monde." ],
+        [ "playerTeacherAvatar", `Alors, ${namePlayer}. maintenant que tu as passé un peu de temps à travailler avec K. A. T. E., je suppose que tu as remarqué qu'elle peut avoir certains préjugés, ou biais.` ],
+        [ "KATE", "C'est parce que je fait des catégorisation à travers des ensembles de données que je rassemble à partir du monde autour de moi." ],
+        [ "playerTeacherAvatar", "Si tu tu classes des choses ou des personnes dans des catégories, tu exprimes en fait ta propre vision du monde." ],
         [ "playerTeacherAvatar", "C'est un acte de pouvoir." ],
-        [ "playerTeacherAvatar", "Cela souleve de nombreuses implications importantes sur la façon dont nous utilisons l'IA, comme lors de l'exercice d'aujourd'hui." ],
-        [ "playerTeacherAvatar", "Si les categories refletent les opinions et les pratiques des gens et qu'elles sont utilisees pour alimenter les donnees d'une IA, pouvons-nous reellement affirmer que cette derniere est neutre ?" ],
-        [ "playerTeacherAvatar", "Aujourd'hui, K.A.T.E. a reçu des informations sur les enseignants qui avaient ete triees en categories : age, experience professionnelle, sexe..." ],
-        [ "playerTeacherAvatar", "Ces enseignants ont ete tries selon la vision du monde d'une personne : notre directeur, M. Umbridge." ],
-        [ "playerTeacherAvatar", "Les suggestions de K.A.T.E pour le meilleur candidat au poste de professeur de sciences refletent ceci." ],
-        [ "playerTeacherAvatar", "Alors, que devrions-nous corriger en premier : l'IA entraînee sur des donnees biaisees ou la societe d'où proviennent les biais ?"],
-        [ "playerTeacherAvatar", `Reflechis-y, ${namePlayer}.`],
+        [ "playerTeacherAvatar", "Cela soulàve de nombreuses implications importantes sur la façon dont nous utilisons l'IA, comme lors de l'exercice d'aujourd'hui." ],
+        [ "playerTeacherAvatar", "Si les catégories reflètent les opinions et les pratiques des gens et qu'elles sont utilisées pour alimenter les données d'une IA, pouvons-nous réellement affirmer que cette dernière est neutre ?" ],
+        [ "playerTeacherAvatar", "Aujourd'hui, K.A.T.E. a reçu des informations sur les enseignants qui avaient été triées en catégories : âge, expérience professionnelle, sexe..." ],
+        [ "playerTeacherAvatar", "Ces enseignants ont été triés selon la vision du monde d'une personne : notre directeur, M. Umbridge." ],
+        [ "playerTeacherAvatar", "Les suggestions de K.A.T.E pour le meilleur candidat au poste de professeur de sciences reflètent ceci." ],
+        [ "playerTeacherAvatar", "Alors, que devrions-nous corriger en premier : l'IA entraînee sur des données biaisées ou la société d'où proviennent les biais ?"],
+        [ "playerTeacherAvatar", `Réfléchis-y, ${namePlayer}.`],
     ];
     let curDialog = 0;
     const avatar = add([
@@ -2417,8 +2417,8 @@ scene("lastSceneFR", ()=>{
 //////////////////////////////////////////////////// Scene 14: Credits /////////////////////////////////////////////////////////////////
 scene("creditsFR", () =>{
     add([
-        text(`b.I.A.s. a ete developpe dans le cadre du cours
-        Jeu video 2D (printemps 2022) enseigne par
+        text(`b.I.A.s. a été développé dans le cadre du cours
+        Jeu video 2D (printemps 2022) enseigné par
         Prof. Isaac Pante (SLI, Lettres, UNIL)
 
 Appuyez sur la barre espace pour rejouer`, {
