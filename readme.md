@@ -3,16 +3,17 @@
 
 # b.I.A.s
 
-## Project description
-This project is a 2D RPG-style, dialogue-driven game with a pedagological undercurrent. The player assumes the role of a student in a school set in a fictional English village. There's an opening for a science teaching position which needs to be filled. The player is tasked to accompany an AI called K.A.T.E. whose purpose is to suggest the best possible candidate for the job. K.A.T.E needs to gather information from current teachers and the headmaster to make her suggestion. Will the player agree with her final decision? 
+## Description du projet
+Ce projet est un jeu de dialogue en 2D de type RPG avec un sous-jacent pédagogique. Le joueur incarne le rôle d'un étudiant dans une école anglaise fictive qui est à la recherche d'un nouveau profeseur de sciences. Le joueur est chargé d'accompagner une IA appelée K.A.T.E. dont le but est de suggérer le meilleur candidat possible pour le poste. K.A.T.E. doit recueillir des informations auprès des professeurs actuels ainsi que le directeur de l'école pour faire sa proposition. Le joueur sera-t-il d'accord avec sa décision finale ? 
+
 
 ## Sources
 CRAWFORD, K. 'Categorisation', in _Atlas of AI: power, politics, and the planetary costs of artificial intelligence_, Yale University Press, 2021.
 
 * boyd, d. et Crawford, K. 2012. 'Critical questions for big data', in _Information, Communication & Society_, vol. 15, n°5, pp 662–679.
 
-## Aim of the game
-This project aims to raise awareness in a young audience about basic notions surrounding biases in Artificial Intelligence. One key aspect of the controversies that AI has raised in recent times involve biases. Kate Crawford has spent much of her career exploring such controversies, and has offered a fresh perspective on how such baises appear and manifest themselves in AI. Indeed, in one chapter of her book _Atlais of AI: power, politics, and the planetary costs of artificial intelligence_ she explains how the act of categorising objects or people when creating datasets from which AI can learn constitutes an "act of power" insofar as it is a reflection of mores, beliefs and practices in society – whether positive or negative. It is not the AI which spontaneously creates biases, it simply reflects the ones society holds. 
+## Objectif du jeu
+Ce projet vise à sensibiliser un jeune public aux notions de base entourant les préjugés dans l'intelligence artificielle. L'un des principaux aspects des controverses soulevées récemment au sujet de l'intelligence artificielle porte sur les préjugés. Kate Crawford a consacré une grande partie de sa carrière à l'étude de ces controverses et a offert une perspective nouvelle sur la manière dont ces biais apparaissent et se manifestent dans l'IA. En effet, dans un chapitre de son livre _Atlais of AI : power, politics, and the planetary costs of artificial intelligence_, elle explique comment l'acte de catégoriser des objets ou des personnes lors de la création d'ensembles de données à partir desquels l'IA peut apprendre constitue un "acte de pouvoir" dans la mesure où il est le reflet des mœurs, des croyances et des pratiques de la société - qu'elles soient positives ou négatives. Ce n'est pas l'IA qui crée spontanément des préjugés, elle ne fait que refléter ceux de la société. 
 
 
 
@@ -20,18 +21,18 @@ This project aims to raise awareness in a young audience about basic notions sur
 
 
 
-## Developement process
-This game was originally conceived as a interactive fiction game to be developped in Inky. Eventually, we decided that wanted to include interactivity with an overwolrd environment, and chose to make the game in Kaboomjs instead.
+## Processus de Développement
+Ce jeu a été conçu à l'origine comme un jeu de fiction interactif à développer dans Inky. Finalement, nous avons décidé que nous voulions inclure l'interactivité avec un environnement global, et nous avons choisi de faire le jeu en Kaboomjs à la place.
 
-While the hard coding was split evenly between us, the artwork (background, portraits, CVs, sprites) in the game was made from scratch by Tessa using a pixel art program. The dialogue was written by Sophie. The plot of the game and main narrative was a collaborative endeavour.
+Alors que le codage a été partagé équitablement entre nous, l'illustration (arrière-plan, portraits, CVs, sprites) du jeu a été faite à partir de zéro par Tessa en utilisant un programme de pixel art. Les dialogues ont été écrits par Sophie. L'intrigue du jeu et la narration principale ont été élaborées en collaboration.
 
 
 ![](assets/readMe2.png)
 
-## **Tools used**
-- This project was conducted using the kaboomjs library and Visual Studio Code.
+## **outils utilisés**
+- Ce projet a été réalisé en utilisant Kaboomjs et Visual Studio Code.
 
-- This project was a collaborative effort produced in-person and using Visual Studio Code's Live Share extension. Commit rates are therefore not representative of the overall work distribution as they were made by whomever hosted the Live Share during collaboration sessions. 
+- Ce projet est le fruit d'un travail collaboratif réalisé en personne et en utilisant l'extension Live Share de Visual Studio Code. Les taux d'engagement ne sont donc pas représentatifs de la répartition globale du travail, car ils ont été effectués par la personne qui a lancé l'application Live Share pendant les sessions de collaboration. 
 
-## Development context
-This project was developed as part of the course "Jeu vidéo 2D" (Spring 2022) taught by Prof. Isaac Pante (SLI, Lettres, UNIL)
+## Contexte de développement
+Ce projet a été développé dans le cadre du cours "Jeu vidéo 2D" (printemps 2022) enseigné par le Prof. Isaac Pante (SLI, Lettres, UNIL).
