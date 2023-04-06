@@ -2438,4 +2438,4 @@ Appuyez sur la barre espace pour rejouer`, {
 
 
 // Initialize game 
-go("corridorFR");
+go("accueil");
