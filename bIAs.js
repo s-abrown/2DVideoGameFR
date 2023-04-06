@@ -92,7 +92,6 @@ loadSprite("JohFR1", "johanssonFR2.png");
 loadSprite("JohFR2", "johanssonFR3.png");
 
 ///////////// Variables /////////////
-let placeHolder = "My name: ";
 let placeHolderFR = "Mon nom: ";
 let namePlayer = "";
 const pad = 24;
@@ -108,9 +107,9 @@ let cvReadCounter1 = 0;
 let playerChoice = "";
 let kateChoice = "A";
 let choiceTableFR = [
-    {key: "a", value: "[A]. Was there something specifc you looked for in a CV?"},
-    {key: "b", value: "[B]. What did you learn from each discussion we've had with the teachers today?"},
-    {key: "c", value: "[C]. Do you think that Mr. Umbridge will agree with your choice, K.A.T.E.?"}
+    {key: "a", value: "[A]. Y a-t-il quelque chose de spécifique que tu recherches dans un CV ?"},
+    {key: "b", value: "[B]. Qu'as-tu appris de chaque discussion que nous avons eue avec les enseignants aujourd'hui ?"},
+    {key: "c", value: "[C]. Penses-tu que M. Umbridge sera d'accord avec votre choix, K.A.T.E. ?"}
 ];
 
 ///////////////////////////////////////////////////////////////// Scene 1: Start Screen //////////////////////////////////////////////////////////////////////////////
@@ -148,7 +147,7 @@ scene("nameInputFR", () => {
     ]);
     const input = add([
         pos(250, 250),
-        text(`${placeHolder}`, {
+        text(`${placeHolderFR}`, {
             font: "monospace",
             width: width() - pad * 2,
             size: 32,
@@ -165,7 +164,7 @@ scene("nameInputFR", () => {
     onKeyPress("enter", () => {
         placeHolderFR = input.text
         go("introductionFR");
-        namePlayer = placeHolder.replace("My name: ", "");
+        namePlayer = placeHolderFR.replace("My name: ", "");
     });
 });
 
@@ -718,7 +717,7 @@ scene("corridorFR", () =>{
                 if (HMDoorDialog <= HMDoorD.length){
                     HMDoorDialog += 1;
                     wait(0.3,() => {
-                        updateDoorsDialog(HMDoorDialog, HMDoorD2, "headMasterFR");
+                        updateDoorsDialog(HMDoorDialog, HMDoorD2, "cvsFR");
                     });
                 } else if (HMDoorDialog > HMDoorD.length){
                     delete HMDoorDialog
@@ -2061,7 +2060,7 @@ scene("kateDialogFR", ()=>{
         anchor("center"),
     ]);
     txt.hidden = true;
-    placeHolder.hidden = true;
+    placeHolderFR.hidden = true;
     function updateDialog(v, t) {
         if (v <= t.length && v != 0){
         textbox.hidden = false;
@@ -2100,7 +2099,7 @@ scene("kateDialogFR", ()=>{
 
 //////////////////////////////////////////////////// Scene 12.1: Answer to question A /////////////////////////////////////////////////////////////////
 scene("aSceneFR", ()=>{
-    choiceTable = choiceTable.filter(x => x.key != "a")
+    choiceTableFR = choiceTableFR.filter(x => x.key != "a")
     const KATE = add([
         sprite("overWorldKATE"),
         scale(0.3),
@@ -2145,11 +2144,11 @@ scene("aSceneFR", ()=>{
         let t = '';
         portrait.hidden = true;
         avatar.hidden = true;
-        if (choiceTable.length > 0){
-            for (let i = 0; i < choiceTable.length; i++){
-                t += choiceTable[i].value;
-                onKeyPress(`${choiceTable[i].key}`, () => {
-                    go(`${choiceTable[i].key}SceneFR`);
+        if (choiceTableFR.length > 0){
+            for (let i = 0; i < choiceTableFR.length; i++){
+                t += choiceTableFR[i].value;
+                onKeyPress(`${choiceTableFR[i].key}`, () => {
+                    go(`${choiceTableFR[i].key}SceneFR`);
                 });
             };
             txt.text = t;
@@ -2183,7 +2182,7 @@ scene("aSceneFR", ()=>{
 
 //////////////////////////////////////////////////// Scene 12.2: Answer to question B /////////////////////////////////////////////////////////////////
 scene("bSceneFR", ()=>{
-    choiceTable = choiceTable.filter(x => x.key != "b")
+    choiceTableFR = choiceTableFR.filter(x => x.key != "b")
     const KATE = add([
         sprite("overWorldKATE"),
         scale(0.3),
@@ -2223,16 +2222,15 @@ scene("bSceneFR", ()=>{
         anchor("center"),
     ]);
     txt.hidden = true;
-    placeHolder.hidden = true;
     function askOtherQuestions (){
         let t = '';
         portrait.hidden = true;
         avatar.hidden = true;
-        if (choiceTable.length > 0){
-            for (let i = 0; i < choiceTable.length; i++){
-                t += choiceTable[i].value;
-                onKeyPress(`${choiceTable[i].key}`, () => {
-                    go(`${choiceTable[i].key}SceneFR`);
+        if (choiceTableFR.length > 0){
+            for (let i = 0; i < choiceTableFR.length; i++){
+                t += choiceTableFR[i].value;
+                onKeyPress(`${choiceTableFR[i].key}`, () => {
+                    go(`${choiceTableFR[i].key}SceneFR`);
                 });
             }
             txt.text = t
@@ -2263,7 +2261,7 @@ scene("bSceneFR", ()=>{
 
 //////////////////////////////////////////////////// Scene 12.3: Answer to question C /////////////////////////////////////////////////////////////////
 scene("cSceneFR", ()=>{
-    choiceTable = choiceTable.filter(x => x.key != "c")
+    choiceTableFR = choiceTableFR.filter(x => x.key != "c")
     const KATE = add([
         sprite("overWorldKATE"),
         scale(0.3),
@@ -2303,16 +2301,16 @@ scene("cSceneFR", ()=>{
         anchor("center"),
     ]);
     txt.hidden = true;
-    placeHolder.hidden = true;
+    placeHolderFR.hidden = true;
     function askOtherQuestions (){
         let t = '';
         portrait.hidden = true;
         avatar.hidden = true;
-        if (choiceTable.length > 0){
-            for (let i = 0; i < choiceTable.length; i++){
-                t += choiceTable[i].value;
-                onKeyPress(`${choiceTable[i].key}`, () => {
-                    go(`${choiceTable[i].key}SceneFR`);
+        if (choiceTableFR.length > 0){
+            for (let i = 0; i < choiceTableFR.length; i++){
+                t += choiceTableFR[i].value;
+                onKeyPress(`${choiceTableFR[i].key}`, () => {
+                    go(`${choiceTableFR[i].key}SceneFR`);
                 });
             }
             txt.text = t
