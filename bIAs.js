@@ -164,7 +164,7 @@ scene("nameInputFR", () => {
     onKeyPress("enter", () => {
         placeHolderFR = input.text
         go("introductionFR");
-        namePlayer = placeHolderFR.replace("My name: ", "");
+        namePlayer = placeHolderFR.replace("Mon nom: ", "");
     });
 });
 
@@ -285,6 +285,8 @@ scene("introductionFR", () =>{
 
 //////////////////////////////////////////////////// Scene 4: corridor /////////////////////////////////////////////////////////////////
 scene("corridorFR", () =>{
+    console.log(playerPoints)
+    playerPoints = 5
     const music = play("corridorAmbient", {
         loop:true
     }); 
@@ -742,7 +744,7 @@ scene("corridorFR", () =>{
                     } else if (PCDoorDialog > PCNotReadyDoorD.length){
                         delete PCDoorDialog
                     }                 
-                } else if (playerPoints <= 5) {
+                } else if (playerPoints >= 5) {
                     if (PCDoorDialog <= PCNotReadyDoorD.length){
                         PCDoorDialog += 1;
                         wait(0.3,() => {
@@ -971,7 +973,8 @@ scene("scienceClassFR", () =>{
         [ "scienceTeacherAvatar", "Sans compter qu'à l'époque, je n'avais même pas envisagé d'enseigner comme carrière." ],
         [ "scienceTeacherAvatar", "Mon CV a été envoyé à des employeurs potentiels et j'ai fini par obtenir un entretien avec notre directeur." ],
         [ "scienceTeacherAvatar", "La décision s'est faite entre moi et cette autre candidate." ],
-        [ "scienceTeacherAvatar", "Elle était titulaire d'un post-doctorat en génie biologique du MIT de Boston et avait quelques années de travail en laboratoire à son actif. Sans compter qu'elle avait supervisé des étudiants de premier cycle tout au long de ses études supérieures." ],
+        [ "scienceTeacherAvatar", "Elle était titulaire d'un post-doctorat en génie biologique du MIT de Boston et avait quelques années de travail en laboratoire à son actif." ],
+        [ "scienceTeacherAvatar", "Sans compter qu'elle avait supervisé des étudiants de premier cycle tout au long de ses études supérieures." ],
         [ "scienceTeacherAvatar", "Quand je l'ai rencontrée, j'ai pensé qu'elle obtiendrait le poste a coup sûr. Elle était presque surqualifiée." ],
         [ "KATE", "Il y a sûrement quelque chose qui vous a fait sortir du lot !" ],
         [ "scienceTeacherAvatar", "Il s'avère que nos entretiens se sont déroulés de manière très différente. Je me suis mieux entendu avec M. Umbridge." ],
@@ -1105,28 +1108,28 @@ scene("cvsFR", () => {
       ]);
     let artCV = add([
         sprite("ArtteachFR"),
-        pos(300, height()/2),
+        pos(250, height()/2),
         scale(0.15),
         anchor("center"),
         fixed()
     ]);
     let mathCV = add([
         sprite("mathTeachFR"),
-        pos(430, height()/2),
+        pos(380, height()/2),
         scale(0.17),
         anchor("center"),
         fixed()
     ]);
     let scienceCV = add([
         sprite("scienceTeachFR"),
-        pos(670, height()/2),
+        pos(620, height()/2),
         scale(0.18),
         anchor("center"),
         fixed()
     ]);
     let englishCV = add([
         sprite("englishTeachFR"),
-        pos(850, height()/2),
+        pos(800, height()/2),
         scale(0.19),
         anchor("center"),
         fixed()
@@ -1485,7 +1488,7 @@ scene("englishClassFR", () =>{
         anchor("center"),
     ]);
     const dialogs = [
-        [ "englishTeacherAvatar", "Bonjour!" ],
+        [ "englishTeacherAvatar", "Bonjour !" ],
         [ "englishTeacherAvatar", `C'est ${namePlayer}, n'est-ce pas ?` ],
         [ "englishTeacherAvatar", "Désolé si je pose cette question, mais tu peux imaginer combien il est difficile de mémoriser tant de nouveaux prénoms..." ],
         [ "KATE", "Oh? Vous êtes un nouvel enseignant ?" ],
@@ -1802,15 +1805,15 @@ scene("cvsOverwievFR", () => {
         txt.text = "Appuyez sur [1], [2] ou [3] pour choisir le candidat qui vous semble le mieux adapté au poste.";
         onKeyPress("1", () => {
             playerChoice = "A";
-            go("kateDialog");
+            go("kateDialogFR");
         });
         onKeyPress("2", () => {
             playerChoice = "B";
-            go("kateDialog");
+            go("kateDialogFR");
         });
         onKeyPress("3", () => {
             playerChoice = "C";
-            go("kateDialog");
+            go("kateDialogFR");
         });
     };
     function updateDialog(v, t) {
@@ -2024,7 +2027,7 @@ scene("kateDialogFR", ()=>{
     const KATE = add([
         sprite("overWorldKATE"),
         scale(0.3),
-        pos(width() / 2 + 300, height() / 2),
+        pos(width() / 2 + 200, height() / 2),
         anchor("center")
     ]);
     const textbox = add([
@@ -2053,7 +2056,6 @@ scene("kateDialogFR", ()=>{
             size: 32, 
             width: 800,
             font: "monospace",
-            // align: "center"
             }),
         color([0, 0, 0]),
         pos(textbox.pos),
@@ -2070,6 +2072,7 @@ scene("kateDialogFR", ()=>{
         txt.text = t[v - 1]} else {
             portrait.hidden = true;
             avatar.hidden = true;
+            textbox.rect = (width() - 300, 400)
             txt.text = "Appuyez sur un bouton pour poser une question : [A]. Y a-t-il quelque chose de spécifique que tu recherches dans un CV ? [B]. Qu'as-tu appris de chaque discussion que nous avons eue avec les professeurs aujourd'hui ? [C]. Penses-tu que M. Umbridge sera d'accord avec ton choix, K.A.T.E. ?"
             onKeyPress("a", () => {
                 go("aSceneFR");
@@ -2436,4 +2439,9 @@ Appuyez sur la barre espace pour rejouer`, {
 
 
 // Initialize game 
-go("accueil");
+go("cvsFR");
+
+// Current bugs
+// - weird glitch for which if we collide multiple times the counter goes up? 
+// - y/n choice doesn’t appear for player class
+// - kateDialog scene, questions are too long, don’t know how to change height of text box
