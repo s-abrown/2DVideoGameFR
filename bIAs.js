@@ -285,8 +285,6 @@ scene("introductionFR", () =>{
 
 //////////////////////////////////////////////////// Scene 4: corridor /////////////////////////////////////////////////////////////////
 scene("corridorFR", () =>{
-    console.log(playerPoints)
-    playerPoints = 5
     const music = play("corridorAmbient", {
         loop:true
     }); 
@@ -591,8 +589,8 @@ scene("corridorFR", () =>{
     // A) Interaction with LOCKERS when player presses space while touching them
     let lockerD = ["Oh, est-ce qu'on cherche des professeurs cachés dans des casiers ? Quels farceurs!", "C'est une tradition ici que les professeurs s'enferment là-dedans ?", "Peut-être que c'est leur coin tranquille ?", "En tout cas, on dirait qu'il n'y a personne là-dedans.", "On continue ?"];
     let lockerDialog = 0;
-    overWorldPlayer.onCollide("locker", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if(overWorldPlayer.isColliding("locker")) {
             if (lockerDialog <= lockerD.length){
                 console.log('locker'+lockerDialog)
                 lockerDialog += 1;
@@ -602,14 +600,14 @@ scene("corridorFR", () =>{
             } else if (lockerDialog > lockerD.length){
                 delete lockerDialog
             }
-        });
-    })
+        }
+    });
 
     // B) Interaction with CORRIDOR PLANTS when player presses space while touching them
     let plantsD = ["Quelle belle plante verte ! Et c'est une vraie en plus !", "Sais-tu que la présence de telles plantes peut atténuer les sentiments d'anxiété et de stress ?", "Cela peut aider à se sentir plus en paix... et plus calme...", "C'est un peu comme mettre une décoration dans la maison de tes Sims.", "Je suppose que si un moment de calme dans un casier n'aide pas, une plante verte peut sûrement apaiser tes professeurs.", "La nature est précieuse."];
     let plantDialog = 0;
-    overWorldPlayer.onCollide("plant", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if(overWorldPlayer.isColliding("plant")) {
             if (plantDialog <= plantsD.length){
                 console.log('plant'+plantDialog)
                 plantDialog += 1;
@@ -617,26 +615,25 @@ scene("corridorFR", () =>{
                     updateDialog(plantDialog, plantsD);
                 })
             } else if (plantDialog > plantsD.length){
-                delete plantDialog
+                plantDialog = 0;
             };
-        });
-    })
+        };   
+    });
 
     // C) Interaction with BATHROOM DOOR when player presses space when touching it
     let bathroomD = ["Oh, tu as besoin d'aller aux WC ?", "Vas-y, je t'attends ici alors.", "...", "...", "...", "Ok? Allons-y !"];
     let bathroomDialog = 0;
-    overWorldPlayer.onCollide("bathroomDoor", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if(overWorldPlayer.isColliding(batroomDoor)) {
             if (bathroomDialog <= bathroomD.length){
-                console.log('bathroom'+bathroomDialog)
                 bathroomDialog += 1;
                 wait(0.3,() => {
                     updateDialog(bathroomDialog, bathroomD);
                 });
             } else if (bathroomDialog > bathroomD.length){
-                delete bathroomDialog
+               bathroomDialog = 0;
             }
-        });
+        }
     });
 
     // D) Interactions with DOORS 
@@ -646,8 +643,8 @@ scene("corridorFR", () =>{
     let mathsDoorD = ["C'est la porte de la classe de maths, n'est-ce pas ?", "M. Parker devrait être là.", "Allons-nous lui parler de son expérience en tant que candidat retenu pour enseigner dans cette école ?", "Il pourrait avoir de précieuses informations...", "afin que je puisse suggérer la meilleure personne pour le poste d'enseignant de sciences !"];
     let mathsDoorD2 = ["Nous avons déjà parlé à ton professeur de maths, tu te souviens ?", "J'aime bien ses lunettes rouges.", "Tu es sûr de vouloir lui rendre visite à nouveau ?"];
     let mathsDoorDialog = 0;
-    overWorldPlayer.onCollide("mathsDoor", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if(overWorldPlayer.isColliding(mathsDoor)) {
             console.log('maths'+mathsDoorDialog)
             if (mathsPoint == 0) {
                 if (mathsDoorDialog <= mathsDoorD.length){
@@ -656,7 +653,7 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD, "mathsClassFR");
                     })
                 } else if (mathsDoorDialog > mathsDoorD.length) {
-                    delete mathsDoorDialog
+                    mathsDoorDialog = 0;
                 }               
             } else if (mathsPoint > 0) {
                 if (mathsDoorDialog <= mathsDoorD.length){
@@ -665,19 +662,18 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(mathsDoorDialog, mathsDoorD2, "mathsClassFR");
                     });
                 } else if (mathsDoorDialog > mathsDoorD.length) {
-                    delete mathsDoorDialog
+                    mathsDoorDialog = 0;
                 }
             }
-        });
-    })
+        }
+    });
 
     // b) Science Door
     let scienceDoorD = ["C'est la porte de la classe de sciences, n'est-ce pas ?", "M. MacKenzie devrait être là.", "Allons-nous lui parler de son expérience en tant que candidat retenu pour enseigner dans cette école ?", "Il pourrait avoir de précieuses informations...", "afin que je puisse suggérer la meilleure personne pour le poste d'enseignant de sciences !"];
     let scienceDoorD2 = ["Nous avons déjà visite cette classe, tu es sûr de vouloir y retourner ?"];
     let scienceDoorDialog = 0;
-    overWorldPlayer.onCollide("scienceDoor", () => {
-        onKeyPress("space", () => {
-            console.log('science'+scienceDoorDialog)
+    onKeyPress("space", () => {
+        if (overWorldPlayer.isColliding(scienceDoor)){
             if (sciencePoint == 0) {
                 if (scienceDoorDialog <= scienceDoorD.length){
                     scienceDoorDialog += 1;
@@ -694,18 +690,18 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD2, "scienceClassFR");
                     });
                 } else if (scienceDoorDialog > scienceDoorD.length) {
-                    delete scienceDoorDialog
+                    scienceDoorDialog = 0;
                 }
             }
-        });
-    })
+        }
+    });
 
     // c) Headmaster's office
     let HMDoorD = ["C'est le bureau du directeur Umbridge.", "Nous pouvons consulter les CV du personnel enseignant ici...", "et obtenir des informations supplémentaires precieuses sur ce qui a fait d'eux des candidats réussis.", "Il sera également bon de discuter avec M. Umbridge.", "Apres tout, c'est lui qui les a tous embauchés.", "Il a fixeé la norme de ce que nous recherchons pour un nouveau professeur de sciences !", "Plus je rassemble d'informations sur les d'enseignants retenus, plus ma suggestion de candidat correspondra a l'ethique de l'école !"];
     let HMDoorD2 = ["J'ai vraiment apprécié notre conversation avec le directeur, mais je pense me souvenir de tout ce dont nous avons parlé.", "Il pourrait être intéréssant de jeter un autre coup d'œil à ces CV, juste pour être sûr que nous avons tout ce dont nous avons besoin.", "Veux-tu y retourner et y jeter un autre coup d'œil ?"];
     let HMDoorDialog = 0;
-    overWorldPlayer.onCollide("headMastersDoor", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if (overWorldPlayer.isColliding(headmastersDoor)){
             if (headmPoint == 0) {
                 if (HMDoorDialog <= HMDoorD.length){
                     HMDoorDialog += 1;
@@ -713,7 +709,7 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(HMDoorDialog, HMDoorD, "headMasterFR");
                     })
                 } else if (HMDoorDialog > HMDoorD.length){
-                        delete HMDoorDialog
+                        HMDoorDialog = 0;
                 }               
             } else if (headmPoint > 0) {
                 if (HMDoorDialog <= HMDoorD.length){
@@ -722,47 +718,47 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(HMDoorDialog, HMDoorD2, "cvsFR");
                     });
                 } else if (HMDoorDialog > HMDoorD.length){
-                    delete HMDoorDialog
+                    HMDoorDialog = 0;
                 }   
             }
-        });
-    })
+        }
+    });
 
     // d) Player class
     let PCNotReadyDoorD = ["Je ne sais pas pour toi, mais je ne pense pas que nous ayons recueilli assez de donnees pour prendre une decision eclairee pour l'instant...", "Devrions-nous explorer les autres classes avant de revenir ?"];
     let PCReadyDoorD = ["Eh bien, nous avons discute avec beaucoup de gens aujourd'hui.", "Je pense que j'ai maintenant une bonne idee du genre de personne qui conviendrait le mieux au poste. Et toi ?", "Devrions-nous entrer et choisir le meilleur candidat pour le poste ?"];
     let PCDoorDialog = 0;
-        overWorldPlayer.onCollide("playerClassDoor", () => {
-            onKeyPress("space", () => {
-                console.log("pc"+PCDoorDialog)
-                if (playerPoints < 5) {
-                    if (PCDoorDialog <= PCNotReadyDoorD.length){
-                        PCDoorDialog += 1;
-                        wait(0.3,() => {
-                            updateDialog(PCDoorDialog, PCNotReadyDoorD);
-                        })
-                    } else if (PCDoorDialog > PCNotReadyDoorD.length){
-                        delete PCDoorDialog
-                    }                 
-                } else if (playerPoints >= 5) {
-                    if (PCDoorDialog <= PCNotReadyDoorD.length){
-                        PCDoorDialog += 1;
-                        wait(0.3,() => {
-                            updateDoorsDialog(PCDoorDialog, PCReadyDoorD, "playerClassFR");
-                        });
-                    } else if (PCDoorDialog > PCNotReadyDoorD.length){
-                        delete PCDoorDialog
-                    }  
+    onKeyPress("space", () => {
+        if (overWorldPlayer.isColliding(playerClassDoor)) {
+            // console.log("pc"+PCDoorDialog, playerPoints)
+            if (playerPoints < 5) {
+                if (PCDoorDialog <= PCNotReadyDoorD.length){
+                    PCDoorDialog += 1;
+                    wait(0.3,() => {
+                        updateDialog(PCDoorDialog, PCNotReadyDoorD);
+                    })
+                } else if (PCDoorDialog > PCNotReadyDoorD.length){
+                    PCDoorDialog = 0
+                }                 
+            } else if (playerPoints >= 5) {
+                if (PCDoorDialog <= PCReadyDoorD.length){
+                    PCDoorDialog += 1;
+                    wait(0.3,() => {
+                        updateDoorsDialog(PCDoorDialog, PCReadyDoorD, "playerClassFR");
+                    });
+                } else if (PCDoorDialog > PCNotReadyDoorD.length){
+                    PCDoorDialog = 0
                 }
-            });
-        })
+            }
+        }
+    });
 
     // e) English class
     let englishDoorD = ["Voici la classe d'anglais.", `Hé, ${namePlayer}, écoute celle-la:` , "The past, present and future walk into a bar...", "It was tense.", "...", "......", "Bref, voyons si M. Moore est disponible.",];
     let englishDoorD2 = ["Ah de retour a la classe d'anglais !", "'We know what we are, but know not what we may be'.", "Excellent ce Shakespeare. Voudrais-tu parler a nouveau a M. Moore ?"];
     let englishDoorDialog = 0;
-    overWorldPlayer.onCollide("englishDoor", () => {
-        onKeyPress("space", () => {
+    onKeyPress("space", () => {
+        if (overWorldPlayer.isColliding(englishDoor)) {
             console.log("english"+englishDoorDialog)
             if (englishPoint == 0) {
                 if (englishDoorDialog <= englishDoorD.length){
@@ -771,7 +767,7 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(englishDoorDialog, englishDoorD, "englishClassFR");
                     })
                 } else if (englishDoorDialog > englishDoorD.length){
-                    delete englishDoorDialog
+                    englishDoorDialog = 0
                 }                 
             } else if (englishPoint > 0) {
                 if (englishDoorD2 <= englishDoorD.length){
@@ -780,41 +776,40 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(englishDoorDialog, englishDoorD2, "englishClassFR");
                     });
                 } else if (englishDoorDialog > englishDoorD.length){
-                    delete englishDoorDialog
+                    englishDoorDialog = 0
                 } 
             }
-        });
-    })
+        }
+        
+    });
 
     // f) Art Door
     let artDoorD = ["Voici la classe d'art.", "Mme Lefebvre doit nous attendre.", "Allons découvrir comment son embauche s'est passée.", "Je suis sûr qu'elle aura des choses intéressantes à nous dire.",];
     let artDoorD2 = ["De retour ici ? Mme Lefebvre nous a été très utile.", "J'aimerais bien avoir une mèche bleue dans les cheveux comme elle.", "Tu veux lui reparler ?"];
     let artDoorDialog = 0;
-    overWorldPlayer.onCollide("artDoor", () => {
         onKeyPress("space", () => {
-            console.log("art"+artDoorDialog)
-            console.log("art"+artDoorDialog)
-            if (artPoint == 0) {
-                if (artDoorDialog <= artDoorD.length){
-                    artDoorDialog += 1;
-                    wait(0.3,() => {
-                        updateDoorsDialog(artDoorDialog, artDoorD, "artClassFR");
-                    })
-                } else if (artDoorDialog > artDoorD.length){
-                    delete artDoorDialog
-                }              
-            } else if (artPoint > 0) {
-                if (artDoorDialog <= artDoorD.length){
-                    artDoorDialog += 1;
-                    wait(0.3,() => {
-                        updateDoorsDialog(artDoorDialog, artDoorD2, "artClassFR");
-                    });
-                } else if (artDoorDialog > artDoorD.length){
-                    delete artDoorDialog
-                }
-            }
+            if (overWorldPlayer.isColliding(artDoor)) {    
+                if (artPoint == 0) {
+                    if (artDoorDialog <= artDoorD.length){
+                        artDoorDialog += 1;
+                        wait(0.3,() => {
+                            updateDoorsDialog(artDoorDialog, artDoorD, "artClassFR");
+                        })
+                    } else if (artDoorDialog > artDoorD.length){
+                        artDoorDialog = 0;
+                    };              
+                } else if (artPoint > 0) {
+                    if (artDoorDialog <= artDoorD.length){
+                        artDoorDialog += 1;
+                        wait(0.3,() => {
+                            updateDoorsDialog(artDoorDialog, artDoorD2, "artClassFR");
+                        });
+                    } else if (artDoorDialog > artDoorD.length){
+                        artDoorDialog = 0;
+                    };
+                };
+            };
         });
-    })
 });
 //////////////////////////////////////////////////// Scene 5: Maths class /////////////////////////////////////////////////////////////////
 scene("mathsClassFR", () =>{
@@ -2072,7 +2067,8 @@ scene("kateDialogFR", ()=>{
         txt.text = t[v - 1]} else {
             portrait.hidden = true;
             avatar.hidden = true;
-            textbox.rect = (width() - 300, 400)
+            textbox.rect = (width() - 300, 400);
+            txt.textSize = 28
             txt.text = "Appuyez sur un bouton pour poser une question : [A]. Y a-t-il quelque chose de spécifique que tu recherches dans un CV ? [B]. Qu'as-tu appris de chaque discussion que nous avons eue avec les professeurs aujourd'hui ? [C]. Penses-tu que M. Umbridge sera d'accord avec ton choix, K.A.T.E. ?"
             onKeyPress("a", () => {
                 go("aSceneFR");
@@ -2439,9 +2435,4 @@ Appuyez sur la barre espace pour rejouer`, {
 
 
 // Initialize game 
-go("cvsFR");
-
-// Current bugs
-// - weird glitch for which if we collide multiple times the counter goes up? 
-// - y/n choice doesn’t appear for player class
-// - kateDialog scene, questions are too long, don’t know how to change height of text box
+go("corridorFR");
