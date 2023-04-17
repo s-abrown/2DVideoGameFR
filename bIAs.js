@@ -729,8 +729,8 @@ scene("corridorFR", () =>{
     })
 
     // d) Player class
-    let PCNotReadyDoorD = ["Je ne sais pas pour toi, mais je ne pense pas que nous ayons recueilli assez de donnees pour prendre une decision eclairee pour l'instant...", "Devrions-nous explorer les autres classes avant de revenir ?"];
-    let PCReadyDoorD = ["Eh bien, nous avons discute avec beaucoup de gens aujourd'hui.", "Je pense que j'ai maintenant une bonne idee du genre de personne qui conviendrait le mieux au poste. Et toi ?", "Devrions-nous entrer et choisir le meilleur candidat pour le poste ?"];
+    let PCNotReadyDoorD = ["Je ne sais pas pour toi, mais je ne pense pas que nous ayons recueilli assez de données pour prendre une décision éclairée pour l'instant...", "Devrions-nous explorer les autres classes avant de revenir ?"];
+    let PCReadyDoorD = ["Eh bien, nous avons discuté avec beaucoup de gens aujourd'hui.", "Je pense que j'ai maintenant une bonne idee du genre de personne qui conviendrait le mieux au poste. Et toi ?", "Devrions-nous entrer et choisir le meilleur candidat pour le poste ?"];
     let PCDoorDialog = 0;
         overWorldPlayer.onCollide("playerClassDoor", () => {
             onKeyPress("space", () => {
