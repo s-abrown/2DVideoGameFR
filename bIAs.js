@@ -566,6 +566,7 @@ scene("corridorFR", () =>{
         textbox.hidden = false;
         txt.text = "Appuyez sur [Y] si vous voulez entrer, ou [N] si vous ne voulez pas.";
     onKeyPress("y", () => {
+        music.paused = true;
         go(string)
     });
     onKeyPress("n", () => {
@@ -590,7 +591,7 @@ scene("corridorFR", () =>{
     let lockerD = ["Oh, est-ce qu'on cherche des professeurs cachés dans des casiers ? Quels farceurs!", "C'est une tradition ici que les professeurs s'enferment là-dedans ?", "Peut-être que c'est leur coin tranquille ?", "En tout cas, on dirait qu'il n'y a personne là-dedans.", "On continue ?"];
     let lockerDialog = 0;
     onKeyPress("space", () => {
-        if(overWorldPlayer.isColliding("locker")) {
+        if(overWorldPlayer.isColliding(lockers)) {
             if (lockerDialog <= lockerD.length){
                 console.log('locker'+lockerDialog)
                 lockerDialog += 1;
@@ -638,7 +639,6 @@ scene("corridorFR", () =>{
 
     // D) Interactions with DOORS 
     // Interactions with doors that lead to teachers or the headmaster vary depending on weather the player has already visited the room in question or not
-    
     // a) Maths Door
     let mathsDoorD = ["C'est la porte de la classe de maths, n'est-ce pas ?", "M. Parker devrait être là.", "Allons-nous lui parler de son expérience en tant que candidat retenu pour enseigner dans cette école ?", "Il pourrait avoir de précieuses informations...", "afin que je puisse suggérer la meilleure personne pour le poste d'enseignant de sciences !"];
     let mathsDoorD2 = ["Nous avons déjà parlé à ton professeur de maths, tu te souviens ?", "J'aime bien ses lunettes rouges.", "Tu es sûr de vouloir lui rendre visite à nouveau ?"];
@@ -681,7 +681,7 @@ scene("corridorFR", () =>{
                         updateDoorsDialog(scienceDoorDialog, scienceDoorD, "scienceClassFR");
                     })
                 } else if (scienceDoorDialog > scienceDoorD.length) {
-                        delete scienceDoorDialog
+                    scienceDoorDialog = 0;
                 }               
             } else if (sciencePoint > 0) {
                 if (scienceDoorDialog <= scienceDoorD.length){
@@ -777,10 +777,9 @@ scene("corridorFR", () =>{
                     });
                 } else if (englishDoorDialog > englishDoorD.length){
                     englishDoorDialog = 0
-                } 
-            }
-        }
-        
+                }; 
+            };
+        };
     });
 
     // f) Art Door
