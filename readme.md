@@ -36,3 +36,7 @@ Alors que le codage a été partagé équitablement entre nous, l'illustration (
 
 ## Contexte de développement
 Ce projet a été développé dans le cadre du cours "Jeu vidéo 2D" (printemps 2022) enseigné par le Prof. Isaac Pante (SLI, Lettres, UNIL).
+
+## Links
+- Version anglais : https://github.com/s-abrown/2DVideoGame
+- Page itch : https://t-cat.itch.io/bias-fr
