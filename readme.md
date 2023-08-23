@@ -1,4 +1,4 @@
-![](assets/bIAs_cover.png)
+![](assets/bIAs_cover.jpg)
 
 
 # b.I.A.s
