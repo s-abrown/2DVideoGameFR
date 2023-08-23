@@ -26,6 +26,9 @@ Ce jeu a été conçu à l'origine comme un jeu de fiction interactif à dévelo
 
 Alors que le codage a été partagé équitablement entre nous, l'illustration (arrière-plan, portraits, CVs, sprites) du jeu a été faite à partir de zéro par Tessa en utilisant un programme de pixel art. Les dialogues ont été écrits par Sophie. L'intrigue du jeu et la narration principale ont été élaborées en collaboration.
 
+## Contrôles et browser
+Contrôles : barre d'espace pour interagir (dialogues) + flèches pour se déplacer sur la carte
+Ce jeu est pour le moment jouable uniquement sur Google Chrome
 
 ![](assets/readMe2.png)
 
