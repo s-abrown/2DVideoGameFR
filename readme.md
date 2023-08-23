@@ -1,4 +1,4 @@
-![](assets/kateBanner.png)
+![](assets/bIAs_cover.png)
 
 
 # b.I.A.s
